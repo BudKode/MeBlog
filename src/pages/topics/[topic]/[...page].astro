@@ -1,0 +1,51 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import Main from "@/components/Main.astro";
+import Card from "@/components/Card.astro";
+import Footer from "@/components/Footer.astro";
+import Pagination from "@/components/Pagination.astro";
+import { topics } from "@/topics";
+import { getPostsForTopic } from "@/utils/topics";
+import config from "@/config";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = await getCollection("posts", ({ data }) => !data.draft);
+  return topics.flatMap(topic =>
+    paginate(getPostsForTopic(posts, topic), {
+      params: { topic: topic.slug },
+      props: { topic },
+      pageSize: config.posts.perPage,
+    })
+  );
+}) satisfies GetStaticPaths;
+
+const { page, topic } = Astro.props;
+---
+
+<Layout title={`${topic.title} | ${config.site.title}`} description={topic.blurb}>
+  <Header />
+
+  <Breadcrumb />
+
+  <Main pageTitle={topic.title} pageDesc={topic.blurb}>
+    {
+      page.data.length > 0 ? (
+        <ul>
+          {page.data.map(data => (
+            <Card {...data} />
+          ))}
+        </ul>
+      ) : (
+        <p class="text-muted-foreground italic">Nothing here yet.</p>
+      )
+    }
+  </Main>
+
+  <Pagination {page} />
+
+  <Footer noMarginTop={page.lastPage > 1} />
+</Layout>

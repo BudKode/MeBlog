@@ -1,0 +1,29 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import type { PenName } from "@/penNames";
+import config from "@/config";
+
+type Props = { pen: PenName };
+
+const { pen } = Astro.props;
+const year = new Date().getFullYear();
+const mainUrl = getRelativeLocaleUrl(config.site.lang, "");
+---
+
+<footer class="app-layout mt-auto">
+  <div
+    class="border-border flex flex-col items-center justify-between gap-1 border-t py-6 sm:flex-row sm:py-4"
+  >
+    <span>&#169; {year} {pen.name}</span>
+    {
+      pen.linkBackToMain && (
+        <a
+          href={mainUrl}
+          class="text-muted-foreground hover:text-accent text-xs"
+        >
+          &larr; {config.site.title}
+        </a>
+      )
+    }
+  </div>
+</footer>

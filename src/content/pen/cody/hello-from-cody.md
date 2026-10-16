@@ -1,5 +1,5 @@
 ---
-title: Hello from Cody McCrainor
+title: Hello from Cody McReanor
 pubDatetime: 2026-10-10T12:00:00Z
 description: An introduction to the author, the kind of stories I write, and what's coming.
 kind: news

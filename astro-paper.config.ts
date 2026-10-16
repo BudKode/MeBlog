@@ -3,13 +3,13 @@ import { defineAstroPaperConfig } from "./src/types/config";
 export default defineAstroPaperConfig({
   site: {
     url: "https://BudKode.github.io",
-    title: "AstroPaper",
-    description: "A minimal, responsive and SEO-friendly Astro blog theme.",
+    title: "Tanner Cranor",
+    description: "Data engineering, 3D printing, and writing: notes from a curious builder.",
     author: "Tanner Cranor",
-    profile: "https://satna.ing",
+    profile: "https://github.com/BudKode",
     ogImage: "default-og.jpg",
     lang: "en",
-    timezone: "Asia/Bangkok",
+    timezone: "America/Denver",
     dir: "ltr",
   },
   posts: {
@@ -24,15 +24,15 @@ export default defineAstroPaperConfig({
     showBackButton: true,
     editPost: {
       enabled: true,
-      url: "https://github.com/satnaing/astro-paper/edit/main/",
+      url: "https://github.com/BudKode/MeBlog/edit/main/",
     },
     search: "pagefind",
   },
   socials: [
-    { name: "github",   url: "https://github.com/satnaing/astro-paper" },
-    { name: "x",        url: "https://x.com/username" },
-    { name: "linkedin", url: "https://www.linkedin.com/in/username/" },
-    { name: "mail",     url: "mailto:yourmail@gmail.com" },
+    { name: "github", url: "https://github.com/BudKode" },
+    // TODO: add your real profiles, then uncomment:
+    // { name: "linkedin", url: "https://www.linkedin.com/in/YOUR-HANDLE/" },
+    // { name: "mail", url: "mailto:you@example.com" },
   ],
   shareLinks: [
     { name: "whatsapp", url: "https://wa.me/?text=" },

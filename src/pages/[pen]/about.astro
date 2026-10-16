@@ -1,0 +1,41 @@
+---
+import { getEntry, render } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import PenHeader from "@/components/PenHeader.astro";
+import PenFooter from "@/components/PenFooter.astro";
+import { penNames, type PenName } from "@/penNames";
+
+export async function getStaticPaths() {
+  return penNames.map(pen => ({
+    params: { pen: pen.id },
+    props: { pen },
+  }));
+}
+
+type Props = { pen: PenName };
+
+const { pen } = Astro.props;
+
+// Bio text comes from src/content/pages/<pen id>.md; falls back to the short bio.
+const about = await getEntry("pages", pen.id);
+const Content = about ? (await render(about)).Content : null;
+---
+
+<Layout
+  title={`About | ${pen.name}`}
+  description={pen.tagline}
+  pen={pen.id}
+  siteName={pen.name}
+  author={pen.name}
+>
+  <PenHeader pen={pen} />
+
+  <main id="main-content" class="app-layout pb-8">
+    <h1 class="mt-8 text-2xl font-semibold sm:text-3xl">About {pen.name}</h1>
+    <div class="app-prose mt-6">
+      {Content ? <Content /> : <p>{pen.bio}</p>}
+    </div>
+  </main>
+
+  <PenFooter pen={pen} />
+</Layout>

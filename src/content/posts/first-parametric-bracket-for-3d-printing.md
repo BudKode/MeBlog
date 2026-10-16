@@ -2,6 +2,7 @@
 title: Designing a parametric bracket for 3D printing
 pubDatetime: 2026-10-08T18:30:00Z
 description: Lessons from designing a simple mounting bracket with parameters, tolerances, and print orientation in mind.
+featured: true
 tags:
   - cad
   - 3d-printing

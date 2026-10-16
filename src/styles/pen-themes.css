@@ -1,0 +1,45 @@
+/*
+ * Per-pen-name color themes. Layout.astro sets <html data-pen="cody">.
+ * Selectors are more specific than theme.css, so these always win.
+ * To add a pen name, copy a pair of blocks and change the id and colors.
+ */
+
+/* Cody McReanor: ink and ember */
+[data-pen="cody"][data-theme="light"] {
+  --background: #faf7f2;
+  --foreground: #1f1b24;
+  --accent: #8c2f39;
+  --accent-foreground: #ffffff;
+  --muted: #ece5db;
+  --muted-foreground: #6b6270;
+  --border: #e3d9cc;
+}
+[data-pen="cody"][data-theme="dark"] {
+  --background: #14161c;
+  --foreground: #e8e6ef;
+  --accent: #e8b44c;
+  --accent-foreground: #14161c;
+  --muted: #262a36;
+  --muted-foreground: #a2a6b8;
+  --border: #3a3f52;
+}
+
+/* Jackie McReanor: plum and rose */
+[data-pen="jackie"][data-theme="light"] {
+  --background: #fffafc;
+  --foreground: #2a2030;
+  --accent: #a23b72;
+  --accent-foreground: #ffffff;
+  --muted: #f3e6ee;
+  --muted-foreground: #735f78;
+  --border: #ecd8e4;
+}
+[data-pen="jackie"][data-theme="dark"] {
+  --background: #1d1626;
+  --foreground: #f1e9f5;
+  --accent: #f2a6c8;
+  --accent-foreground: #1d1626;
+  --muted: #33264a;
+  --muted-foreground: #b9a9c6;
+  --border: #4a3a63;
+}

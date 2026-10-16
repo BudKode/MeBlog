@@ -34,4 +34,21 @@ const pages = defineCollection({
   }),
 });
 
-export const collections = { posts, pages };
+// Pen-name sections. Folder = pen name id, e.g. src/content/pen/cody/*.md
+const pen = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/pen" }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    pubDatetime: z.date(),
+    modDatetime: z.date().optional().nullable(),
+    kind: z
+      .enum(["post", "news", "excerpt", "book-update"])
+      .default("post"),
+    draft: z.boolean().optional(),
+    tags: z.array(z.string()).default([]),
+    timezone: z.string().optional(),
+  }),
+});
+
+export const collections = { posts, pages, pen };

@@ -12,6 +12,11 @@ type Props = {
   description?: string;
   ogImage?: string;
   canonicalURL?: string;
+  /** Pen-name section id; switches the color theme (see pen-themes.css). */
+  pen?: string;
+  /** Overrides og:site_name / author meta (used by pen-name sections). */
+  siteName?: string;
+  author?: string;
 };
 
 const { site } = config;
@@ -21,6 +26,9 @@ const {
   description = site.description,
   ogImage = resolveDefaultOgImagePath(config),
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
+  pen,
+  siteName = site.title,
+  author = site.author,
 } = Astro.props;
 
 const socialImageURL = new URL(ogImage, Astro.site ?? Astro.url);
@@ -35,6 +43,7 @@ const rssHref = getRelativeLocaleUrl(
   dir={site.dir ?? "ltr"}
   lang={Astro.currentLocale ?? site.lang}
   class="overflow-y-scroll scroll-smooth"
+  data-pen={pen}
 >
   <head>
     <meta charset="UTF-8" />
@@ -54,12 +63,12 @@ const rssHref = getRelativeLocaleUrl(
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
-    <meta name="author" content={site.author} />
+    <meta name="author" content={author} />
     <link rel="sitemap" href={getAssetPath("sitemap-index.xml")} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content={site.title} />
+    <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
@@ -73,12 +82,16 @@ const rssHref = getRelativeLocaleUrl(
     <meta property="twitter:image" content={socialImageURL} />
 
     <!-- RSS autodiscovery -->
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title={site.title}
-      href={new URL(rssHref, Astro.site)}
-    />
+    {
+      !pen && (
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title={site.title}
+          href={new URL(rssHref, Astro.site)}
+        />
+      )
+    }
 
     <!-- Filled at runtime by theme.ts to match the current background colour -->
     <meta name="theme-color" content="" />

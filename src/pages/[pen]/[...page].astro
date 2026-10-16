@@ -1,0 +1,64 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import PenHeader from "@/components/PenHeader.astro";
+import PenFooter from "@/components/PenFooter.astro";
+import PenCard from "@/components/PenCard.astro";
+import Pagination from "@/components/Pagination.astro";
+import { penNames } from "@/penNames";
+import { getPenPosts } from "@/utils/pen";
+import config from "@/config";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const entries = await getCollection("pen");
+  return penNames.flatMap(pen =>
+    paginate(getPenPosts(entries, pen.id), {
+      params: { pen: pen.id },
+      props: { pen },
+      pageSize: config.posts.perPage,
+    })
+  );
+}) satisfies GetStaticPaths;
+
+const { page, pen } = Astro.props;
+---
+
+<Layout
+  title={pen.name}
+  description={pen.tagline}
+  pen={pen.id}
+  siteName={pen.name}
+  author={pen.name}
+>
+  <PenHeader pen={pen} />
+
+  <main id="main-content" class="app-layout pb-4">
+    {
+      page.currentPage === 1 && (
+        <section class="border-border border-b pt-10 pb-8">
+          <h1 class="text-4xl font-bold sm:text-5xl">{pen.name}</h1>
+          <p class="text-muted-foreground mt-3 italic">{pen.tagline}</p>
+          <p class="mt-4">{pen.bio}</p>
+        </section>
+      )
+    }
+
+    <h2 class="mt-8 text-2xl font-semibold tracking-wide">Latest</h2>
+    {
+      page.data.length > 0 ? (
+        <ul>
+          {page.data.map(entry => (
+            <PenCard {entry} />
+          ))}
+        </ul>
+      ) : (
+        <p class="text-muted-foreground mt-6 italic">Nothing here yet. Check back soon.</p>
+      )
+    }
+  </main>
+
+  <Pagination {page} />
+
+  <PenFooter pen={pen} />
+</Layout>

@@ -1,0 +1,60 @@
+---
+import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
+import IconMoon from "@/assets/icons/IconMoon.svg";
+import { stripBase } from "@/utils/withBase";
+import { penUrl } from "@/utils/pen";
+import { useTranslations } from "@/i18n";
+import type { PenName } from "@/penNames";
+import config from "@/config";
+
+type Props = { pen: PenName };
+
+const { pen } = Astro.props;
+const t = useTranslations(Astro.currentLocale ?? config.site.lang);
+
+const path = stripBase(Astro.url.pathname).replace(/\/+$/, "");
+const onAbout = path.endsWith("/about");
+---
+
+<a
+  id="skip-to-content"
+  href="#main-content"
+  class="bg-background text-accent absolute inset-s-16 -top-full z-50 px-3 py-2 backdrop-blur-lg transition-all focus:top-4"
+>
+  {t.a11y.skipToContent}
+</a>
+
+<header class="app-layout">
+  <div
+    class="border-border bg-background flex w-full flex-wrap items-center justify-between gap-y-2 border-b py-4 sm:py-6"
+  >
+    <a href={penUrl(pen.id)} class="text-xl font-semibold sm:text-2xl">
+      {pen.name}
+    </a>
+    <nav
+      class="[&_a]:hover:text-accent flex items-center gap-x-5 font-medium"
+      aria-label={pen.name}
+    >
+      <a href={penUrl(pen.id)} class:list={{ "active-nav": !onAbout }}>
+        Writing
+      </a>
+      <a href={penUrl(pen.id, "about")} class:list={{ "active-nav": onAbout }}>
+        {t.nav.about}
+      </a>
+      {
+        config.features.lightAndDarkMode && (
+          <button
+            id="theme-btn"
+            class="focus-outline hover:[&>svg]:stroke-accent relative size-8 p-4"
+            title={t.a11y.toggleTheme}
+            aria-label="auto"
+            aria-live="polite"
+          >
+            <IconMoon class="absolute top-[50%] left-[50%] translate-[-50%] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+            <IconSunHigh class="absolute top-[50%] left-[50%] translate-[-50%] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+          </button>
+        )
+      }
+    </nav>
+  </div>
+</header>

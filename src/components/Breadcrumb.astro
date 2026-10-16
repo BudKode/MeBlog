@@ -30,6 +30,7 @@ const navLabels: Record<string, string> = {
   about: t.nav.about,
   archives: t.nav.archives,
   search: t.nav.search,
+  topics: "Topics",
 };
 
 // if breadcrumb is Home > Posts > [page] <etc>
@@ -53,6 +54,15 @@ if (breadcrumbList[0] === "tags" && !isNaN(Number(breadcrumbList[2]))) {
         ? ""
         : `(${t.pagination.page.toLowerCase()} ${breadcrumbList[2]})`
     }`
+  );
+}
+
+// Home > Topics > [topic] > [page] collapses to Home > Topics > [topic] (page n)
+if (breadcrumbList[0] === "topics" && !isNaN(Number(breadcrumbList[2]))) {
+  breadcrumbList.splice(
+    1,
+    2,
+    `${decodeSegment(breadcrumbList[1] ?? "")} (${t.pagination.page.toLowerCase()} ${breadcrumbList[2]})`
   );
 }
 ---

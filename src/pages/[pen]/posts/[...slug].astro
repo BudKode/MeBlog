@@ -1,0 +1,109 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import PenHeader from "@/components/PenHeader.astro";
+import PenFooter from "@/components/PenFooter.astro";
+import Datetime from "@/components/Datetime.astro";
+import { penNames, type PenName } from "@/penNames";
+import {
+  getPenPosts,
+  penPostUrl,
+  penSlug,
+  penUrl,
+  type PenEntry,
+} from "@/utils/pen";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("pen");
+  return penNames.flatMap(pen => {
+    const sorted = getPenPosts(entries, pen.id);
+    return sorted.map((entry, index) => ({
+      params: { pen: pen.id, slug: penSlug(entry) },
+      props: {
+        pen,
+        entry,
+        // sorted is newest-first: "older" is the next index, "newer" the previous.
+        older: sorted[index + 1] ?? null,
+        newer: sorted[index - 1] ?? null,
+      },
+    }));
+  });
+}
+
+type Props = {
+  pen: PenName;
+  entry: PenEntry;
+  older: PenEntry | null;
+  newer: PenEntry | null;
+};
+
+const { pen, entry, older, newer } = Astro.props;
+const { title, description, pubDatetime, modDatetime, timezone, tags } =
+  entry.data;
+
+const { Content } = await render(entry);
+---
+
+<Layout
+  title={`${title} | ${pen.name}`}
+  description={description}
+  pen={pen.id}
+  siteName={pen.name}
+  author={pen.name}
+>
+  <PenHeader pen={pen} />
+
+  <main id="main-content" class="app-layout mt-8 pb-8">
+    <a
+      href={penUrl(pen.id)}
+      class="text-muted-foreground hover:text-accent text-sm"
+    >
+      &larr; {pen.name}
+    </a>
+
+    <h1 class="text-accent mt-4 text-2xl font-bold sm:text-3xl">{title}</h1>
+
+    <div class="my-2">
+      <Datetime {pubDatetime} {modDatetime} {timezone} size="lg" />
+    </div>
+
+    <article id="article" class="app-prose max-w-app mt-8 w-full">
+      <Content />
+    </article>
+
+    {
+      tags.length > 0 && (
+        <ul class="mt-8 flex flex-wrap gap-3 text-sm">
+          {tags.map(tag => (
+            <li class="border-border text-muted-foreground rounded-full border px-3 py-0.5">
+              {tag}
+            </li>
+          ))}
+        </ul>
+      )
+    }
+
+    <hr class="my-8 border-dashed" />
+
+    <div class="flex flex-col gap-4 sm:flex-row sm:justify-between">
+      {
+        newer ? (
+          <a href={penPostUrl(newer)} class="hover:text-accent">
+            &larr; {newer.data.title}
+          </a>
+        ) : (
+          <span />
+        )
+      }
+      {
+        older && (
+          <a href={penPostUrl(older)} class="hover:text-accent sm:text-end">
+            {older.data.title} &rarr;
+          </a>
+        )
+      }
+    </div>
+  </main>
+
+  <PenFooter pen={pen} />
+</Layout>

@@ -2,6 +2,7 @@
 title: Making Delta Lake merges idempotent
 pubDatetime: 2026-10-05T14:00:00Z
 description: A simple dedupe-then-MERGE pattern that lets you safely re-run a Databricks pipeline without creating duplicates.
+featured: true
 tags:
   - data-engineering
   - databricks

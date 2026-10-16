@@ -11,6 +11,8 @@ import Card from "@/components/Card.astro";
 import LinkButton from "@/components/LinkButton.astro";
 import { getSortedPosts } from "@/utils/getSortedPosts";
 import { useTranslations } from "@/i18n";
+import { topics } from "@/topics";
+import { getPostsForTopic } from "@/utils/topics";
 import config from "@/config";
 
 const { socials, posts: postsConfig } = config;
@@ -23,6 +25,12 @@ const sortedPosts = getSortedPosts(posts);
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 const homePath = getRelativeLocaleUrl(locale, "");
+const topicSections = topics
+  .map(topic => ({
+    topic,
+    latest: getPostsForTopic(posts, topic).slice(0, 2),
+  }))
+  .filter(({ latest }) => latest.length > 0);
 ---
 
 <Layout>
@@ -35,7 +43,7 @@ const homePath = getRelativeLocaleUrl(locale, "");
   >
     <section id="hero" class="border-border border-b pt-8 pb-6">
       <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
-        Mingalaba
+        Hi, I'm Tanner.
       </h1>
       <a
         target="_blank"
@@ -53,20 +61,25 @@ const homePath = getRelativeLocaleUrl(locale, "");
       </a>
 
       <p>
-        AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro
-        blog theme. This theme follows best practices and provides accessibility
-        out of the box. Light and dark mode are supported by default. Moreover,
-        additional color schemes can also be configured.
+        I'm a data engineer (Python and SQL on Databricks), a hobby CAD designer
+        for 3D printing, and an aspiring author. This is where I write about
+        all of it.
       </p>
       <p class="mt-2">
-        Read the blog posts or check{" "}
+        New here? Browse by{" "}
         <LinkButton
           class="hover:text-accent underline decoration-dashed underline-offset-4"
-          href="https://github.com/satnaing/astro-paper#readme"
+          href={getRelativeLocaleUrl(locale, "topics")}
         >
-          README
+          topic
         </LinkButton>{" "}
-        for more info.
+        or read the{" "}
+        <LinkButton
+          class="hover:text-accent underline decoration-dashed underline-offset-4"
+          href={getRelativeLocaleUrl(locale, "about")}
+        >
+          about page
+        </LinkButton>.
       </p>
       {
         socials.length > 0 && (
@@ -112,6 +125,29 @@ const homePath = getRelativeLocaleUrl(locale, "");
               <Card variant="h3" {...data} />
             ))}
           </ul>
+        </section>
+      )
+    }
+
+    {
+      topicSections.length > 0 && (
+        <section id="topics" class="border-border border-t pt-12 pb-6">
+          <h2 class="text-2xl font-semibold tracking-wide">Explore by topic</h2>
+          {topicSections.map(({ topic, latest }) => (
+            <div class="mt-6">
+              <a
+                href={getRelativeLocaleUrl(locale, `topics/${topic.slug}/`)}
+                class="text-accent text-lg font-medium decoration-dashed underline-offset-4 hover:underline"
+              >
+                {topic.title} <IconArrowRight class="inline-block size-4" />
+              </a>
+              <ul>
+                {latest.map(data => (
+                  <Card variant="h3" {...data} />
+                ))}
+              </ul>
+            </div>
+          ))}
         </section>
       )
     }

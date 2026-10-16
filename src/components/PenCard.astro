@@ -1,0 +1,40 @@
+---
+import { penPostUrl, type PenEntry } from "@/utils/pen";
+import Datetime from "./Datetime.astro";
+
+type Props = { entry: PenEntry; heading?: "h2" | "h3" };
+
+const { entry, heading: Heading = "h2" } = Astro.props;
+const { title, description, kind, pubDatetime, modDatetime, timezone } =
+  entry.data;
+
+const kindLabel: Record<string, string> = {
+  news: "News",
+  excerpt: "Excerpt",
+  "book-update": "Book update",
+};
+---
+
+<li class="my-6">
+  <a
+    href={penPostUrl(entry)}
+    class:list={[
+      "text-accent inline-block text-lg font-medium",
+      "decoration-dashed underline-offset-4 hover:underline",
+      "focus-visible:no-underline focus-visible:underline-offset-0",
+    ]}
+  >
+    <Heading>{title}</Heading>
+  </a>
+  <div class="flex flex-wrap items-center gap-x-3">
+    <Datetime {pubDatetime} {modDatetime} {timezone} />
+    {
+      kindLabel[kind] && (
+        <span class="border-border text-muted-foreground rounded-full border px-2 text-xs">
+          {kindLabel[kind]}
+        </span>
+      )
+    }
+  </div>
+  <p>{description}</p>
+</li>

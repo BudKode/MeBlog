@@ -35,8 +35,13 @@ export default defineAstroPaperConfig({
       url: "https://makerworld.com/en/@user_3428406922",
       linkTitle: "BudKodeDesigns on MakerWorld",
     },
-    // More profiles (uncomment once the real URLs are known):
-    // { name: "linkedin", url: "https://www.linkedin.com/in/YOUR-HANDLE/" },
+    {
+      name: "linkedin",
+      url: "https://www.linkedin.com/in/tannercranor926967113",
+      linkTitle: "Tanner Cranor on LinkedIn",
+    },
+    // Facebook (icon already exists): uncomment and paste the profile URL.
+    // { name: "facebook", url: "https://www.facebook.com/YOUR-PROFILE", linkTitle: "Tanner Cranor on Facebook" },
     // { name: "mail", url: "mailto:you@example.com" },
   ],
   shareLinks: [

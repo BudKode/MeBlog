@@ -17,3 +17,4 @@ New interests get their own topics as they come along.
 
 - Code: [GitHub](https://github.com/BudKode)
 - 3D printable designs: [MakerWorld](https://makerworld.com/en/@user_3428406922)
+- Work: [LinkedIn](https://www.linkedin.com/in/tannercranor926967113)

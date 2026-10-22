@@ -16,6 +16,6 @@ New interests will get their own topics as they come along.
 ## Elsewhere
 
 - My code is on [GitHub](https://github.com/BudKode).
-- My 3D printable designs are on [MakerWorld](https://makerworld.com/en/@BudKodeDesigns).
+- My 3D printable designs are on [MakerWorld](https://makerworld.com/en/@user_3428406922).
 
 <!-- TODO: add LinkedIn, email, or anything else you'd like to share. -->

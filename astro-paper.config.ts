@@ -33,7 +33,7 @@ export default defineAstroPaperConfig({
     {
       name: "makerworld",
       // Check this opens your profile; fix the handle/URL here if not.
-      url: "https://makerworld.com/en/@BudKodeDesigns",
+      url: "https://makerworld.com/en/@user_3428406922",
       linkTitle: "BudKodeDesigns on MakerWorld",
     },
     // TODO: add your real profiles, then uncomment:

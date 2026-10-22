@@ -28,7 +28,7 @@ export const topics: Topic[] = [
     tags: ["cad", "3d-printing"],
     link: {
       label: "Browse my designs on MakerWorld",
-      url: "https://makerworld.com/en/@BudKodeDesigns",
+      url: "https://makerworld.com/en/@user_3428406922",
     },
   },
   {

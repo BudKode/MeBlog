@@ -18,4 +18,4 @@ The hardest part of a first draft isn't the beginning. It's the long middle, whe
 
 Pacing. I know it when I read it back, but I can't yet feel it while drafting.
 
-More soon, and fiction itself will appear in the Cody McCrainor section.
+More soon, and fiction itself will appear in the Cody McReanor section.

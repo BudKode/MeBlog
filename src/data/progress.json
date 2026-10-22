@@ -1,23 +1,28 @@
 [
   {
     "owner": "main",
-    "title": "Parametric bracket v2",
+    "title": "Jet Trooper mod",
     "kind": "3d-model",
-    "percent": 60,
-    "note": "Redesigning the mounting tabs"
+    "percent": 100,
+    "note": "Published on MakerWorld as Dummy13 x Clone Trooper - Jet Pack Mod",
+    "url": "https://makerworld.com/en/@user_3428406922/upload"
+  },
+  {
+    "owner": "main",
+    "title": "Y-Wing x Dummy13 collaboration",
+    "kind": "3d-model",
+    "percent": 2
   },
   {
     "owner": "cody",
-    "title": "The Lighthouse Keeper",
+    "title": "Omega: first draft",
     "kind": "book",
-    "percent": 35,
-    "note": "First draft"
+    "percent": 100
   },
   {
-    "owner": "jackie",
-    "title": "Untitled first book",
+    "owner": "cody",
+    "title": "Omega: first-draft revision",
     "kind": "book",
-    "percent": 20,
-    "note": "First draft"
+    "percent": 20
   }
 ]

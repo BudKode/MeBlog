@@ -4,7 +4,7 @@ export default defineAstroPaperConfig({
   site: {
     url: "https://BudKode.github.io",
     title: "Tanner Cranor",
-    description: "Data engineering, 3D printing, and writing: notes from a curious builder.",
+    description: "Notes on data engineering, CAD and 3D printing, and writing sci-fi/fantasy.",
     author: "Tanner Cranor",
     profile: "https://github.com/BudKode",
     ogImage: "default-og.jpg",
@@ -32,11 +32,10 @@ export default defineAstroPaperConfig({
     { name: "github", url: "https://github.com/BudKode" },
     {
       name: "makerworld",
-      // Check this opens your profile; fix the handle/URL here if not.
       url: "https://makerworld.com/en/@user_3428406922",
       linkTitle: "BudKodeDesigns on MakerWorld",
     },
-    // TODO: add your real profiles, then uncomment:
+    // More profiles (uncomment once the real URLs are known):
     // { name: "linkedin", url: "https://www.linkedin.com/in/YOUR-HANDLE/" },
     // { name: "mail", url: "mailto:you@example.com" },
   ],

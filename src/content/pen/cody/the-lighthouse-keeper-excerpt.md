@@ -17,5 +17,3 @@ He set down his tea and listened. The wind hadn't changed. The sea still dragged
 "Nobody's up there," he said aloud, because saying it made it true.
 
 The stairs creaked once, from the top.
-
-*(Sample text. Replace with your own work.)*

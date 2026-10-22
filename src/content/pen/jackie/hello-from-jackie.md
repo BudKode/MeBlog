@@ -10,5 +10,3 @@ tags:
 Welcome, and thanks for stopping by.
 
 This page is where I'll share updates on my book: where the draft stands, snippets I'm proud of, and announcements as they happen.
-
-*(Sample text. Lauren, replace this with your own words.)*

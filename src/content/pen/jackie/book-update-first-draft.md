@@ -14,5 +14,3 @@ A quick progress note.
 - **Mood:** cautiously optimistic
 
 More soon.
-
-*(Sample text. Replace with a real update.)*

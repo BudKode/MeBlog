@@ -15,6 +15,6 @@ I write stories where ordinary places hide strange histories. Expect atmosphere,
 
 - **Excerpts** from works in progress
 - **News** on releases and progress
-- **Sign-ups** for updates, once the mailing list is live
+- **Email updates**: coming soon
 
 Thanks for stopping by.

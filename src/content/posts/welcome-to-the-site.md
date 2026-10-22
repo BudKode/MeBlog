@@ -19,6 +19,6 @@ By day I'm a data engineer working in Python and SQL on Databricks. In the eveni
 
 ## A note on the pen name
 
-My fiction appears under the name **Cody McCrainor**, which has its own section of this site. If you're here for stories, head over there.
+My fiction appears under the name **Cody McReanor**, which has its own section of this site. If you're here for stories, head over there.
 
 Thanks for reading.

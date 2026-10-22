@@ -33,6 +33,20 @@ const { page, topic } = Astro.props;
 
   <Main pageTitle={topic.title} pageDesc={topic.blurb}>
     {
+      topic.link && (
+        <p class="mb-6">
+          <a
+            href={topic.link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-accent decoration-dashed underline-offset-4 hover:underline"
+          >
+            {topic.link.label} &rarr;
+          </a>
+        </p>
+      )
+    }
+    {
       page.data.length > 0 ? (
         <ul>
           {page.data.map(data => (

@@ -10,6 +10,8 @@ export type Topic = {
   blurb: string;
   /** Tag slugs (kebab-case) that map to this topic. */
   tags: string[];
+  /** Optional outside link shown on the topic page. */
+  link?: { label: string; url: string };
 };
 
 export const topics: Topic[] = [
@@ -24,6 +26,10 @@ export const topics: Topic[] = [
     title: "CAD & 3D Printing",
     blurb: "Designs, tolerances, and what the failed prints taught me.",
     tags: ["cad", "3d-printing"],
+    link: {
+      label: "Browse my designs on MakerWorld",
+      url: "https://makerworld.com/en/@user_3428406922",
+    },
   },
   {
     slug: "writing",

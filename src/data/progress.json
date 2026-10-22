@@ -5,13 +5,20 @@
     "kind": "3d-model",
     "percent": 100,
     "note": "Published on MakerWorld as Dummy13 x Clone Trooper - Jet Pack Mod",
-    "url": "https://makerworld.com/en/@user_3428406922/upload"
+    "url": "https://makerworld.com/en/models/3382060-dummy13-x-clone-trooper-jet-pack-mod"
   },
   {
     "owner": "main",
     "title": "Y-Wing x Dummy13 collaboration",
     "kind": "3d-model",
     "percent": 2
+  },
+  {
+    "owner": "main",
+    "title": "Dummy13 Centaur",
+    "kind": "3d-model",
+    "percent": 60,
+    "url": "/MeBlog/posts/dummy13-centaur/"
   },
   {
     "owner": "cody",

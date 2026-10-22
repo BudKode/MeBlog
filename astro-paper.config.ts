@@ -30,6 +30,12 @@ export default defineAstroPaperConfig({
   },
   socials: [
     { name: "github", url: "https://github.com/BudKode" },
+    {
+      name: "makerworld",
+      // Check this opens your profile; fix the handle/URL here if not.
+      url: "https://makerworld.com/en/@BudKodeDesigns",
+      linkTitle: "BudKodeDesigns on MakerWorld",
+    },
     // TODO: add your real profiles, then uncomment:
     // { name: "linkedin", url: "https://www.linkedin.com/in/YOUR-HANDLE/" },
     // { name: "mail", url: "mailto:you@example.com" },

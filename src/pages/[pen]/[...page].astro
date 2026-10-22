@@ -5,6 +5,7 @@ import Layout from "@/layouts/Layout.astro";
 import PenHeader from "@/components/PenHeader.astro";
 import PenFooter from "@/components/PenFooter.astro";
 import PenCard from "@/components/PenCard.astro";
+import ProgressList from "@/components/ProgressList.astro";
 import Pagination from "@/components/Pagination.astro";
 import { penNames } from "@/penNames";
 import { getPenPosts } from "@/utils/pen";
@@ -43,6 +44,8 @@ const { page, pen } = Astro.props;
         </section>
       )
     }
+
+    {page.currentPage === 1 && <ProgressList owner={pen.id} />}
 
     <h2 class="mt-8 text-2xl font-semibold tracking-wide">Latest</h2>
     {

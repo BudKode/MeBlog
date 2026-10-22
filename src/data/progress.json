@@ -1,0 +1,23 @@
+[
+  {
+    "owner": "main",
+    "title": "Parametric bracket v2",
+    "kind": "3d-model",
+    "percent": 60,
+    "note": "Redesigning the mounting tabs"
+  },
+  {
+    "owner": "cody",
+    "title": "The Lighthouse Keeper",
+    "kind": "book",
+    "percent": 35,
+    "note": "First draft"
+  },
+  {
+    "owner": "jackie",
+    "title": "Untitled first book",
+    "kind": "book",
+    "percent": 20,
+    "note": "First draft"
+  }
+]

@@ -8,6 +8,7 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import Socials from "@/components/Socials.astro";
 import Card from "@/components/Card.astro";
+import ProgressList from "@/components/ProgressList.astro";
 import LinkButton from "@/components/LinkButton.astro";
 import { getSortedPosts } from "@/utils/getSortedPosts";
 import { useTranslations } from "@/i18n";
@@ -92,6 +93,8 @@ const topicSections = topics
         )
       }
     </section>
+
+    <ProgressList owner="main" />
 
     {
       featuredPosts.length > 0 && (

@@ -23,17 +23,17 @@ export const penNames: PenName[] = [
   {
     id: "cody",
     name: "Cody McReanor",
-    tagline: "Stories where ordinary places hide strange histories.",
-    bio: "Cody McReanor writes atmospheric fiction and slow-burning mysteries. Excerpts, news, and updates on works in progress live here.",
+    tagline: "Atmospheric sci-fi and fantasy fiction.",
+    bio: "Cody McReanor writes atmospheric sci-fi and fantasy fiction. Short stories, novel excerpts, and progress updates live here.",
     showOnMainSite: true,
     linkBackToMain: true,
   },
   {
     id: "jackie",
     name: "Jackie McReanor",
-    tagline: "Book updates and notes from the writing desk.",
-    bio: "Jackie McReanor is working on her first book. Follow along for progress updates, excerpts, and announcements.",
-    // Lauren's call: flip these to true if she wants links to/from the main site.
+    tagline: "Notes from the writing desk.",
+    bio: "Jackie McReanor is a pen name on this site. Writing and updates will be shared here.",
+    // Flip these to true to link this section to/from the main site.
     showOnMainSite: false,
     linkBackToMain: false,
   },

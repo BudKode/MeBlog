@@ -5,7 +5,10 @@ type Item = {
   owner: string;
   title: string;
   kind?: string;
-  percent: number;
+  /** Optional. Leave out when there's no honest number; the status label shows instead. */
+  percent?: number;
+  /** Short label such as "Revising" or "Prototyping". */
+  status?: string;
   note?: string;
 };
 
@@ -23,28 +26,31 @@ const clamp = (n: number) => Math.min(100, Math.max(0, Math.round(n)));
       <h2 class="text-2xl font-semibold tracking-wide">{heading}</h2>
       <ul>
         {items.map(item => {
-          const pct = clamp(item.percent);
+          const pct =
+            typeof item.percent === "number" ? clamp(item.percent) : undefined;
           return (
             <li class="my-5">
               <div class="flex items-baseline justify-between gap-4">
                 <span class="font-medium">{item.title}</span>
                 <span class="text-muted-foreground text-sm tabular-nums">
-                  {pct}%
+                  {pct !== undefined ? `${pct}%` : item.status}
                 </span>
               </div>
-              <div
-                class="bg-muted mt-1 h-3 w-full overflow-hidden rounded-full"
-                role="progressbar"
-                aria-label={`${item.title} progress`}
-                aria-valuemin={0}
-                aria-valuemax={100}
-                aria-valuenow={pct}
-              >
+              {pct !== undefined && (
                 <div
-                  class="bg-accent h-full rounded-full"
-                  style={`width: ${pct}%`}
-                />
-              </div>
+                  class="bg-muted mt-1 h-3 w-full overflow-hidden rounded-full"
+                  role="progressbar"
+                  aria-label={`${item.title} progress`}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  aria-valuenow={pct}
+                >
+                  <div
+                    class="bg-accent h-full rounded-full"
+                    style={`width: ${pct}%`}
+                  />
+                </div>
+              )}
               {item.note && (
                 <p class="text-muted-foreground mt-1 text-sm">{item.note}</p>
               )}

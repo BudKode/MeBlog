@@ -1,23 +1,28 @@
 [
   {
     "owner": "main",
-    "title": "Modular mini cakestands",
+    "title": "Jet Trooper mod",
     "kind": "3d-model",
-    "status": "Prototyping",
-    "note": "Swappable tops and bases on a peg system"
+    "percent": 100,
+    "note": "Published on MakerWorld as Dummy13 x Clone Trooper - Jet Pack Mod",
+    "url": "https://makerworld.com/en/@user_3428406922/upload"
   },
   {
     "owner": "main",
-    "title": "LinkPilot Chrome extension",
-    "kind": "software",
-    "status": "Early build",
-    "note": "Plain-English UTM link builder"
+    "title": "Y-Wing x Dummy13 collaboration",
+    "kind": "3d-model",
+    "percent": 2
   },
   {
     "owner": "cody",
-    "title": "Sci-fi/fantasy novel",
+    "title": "Omega: first draft",
     "kind": "book",
-    "status": "Revising",
-    "note": "First draft done"
+    "percent": 100
+  },
+  {
+    "owner": "cody",
+    "title": "Omega: first-draft revision",
+    "kind": "book",
+    "percent": 20
   }
 ]

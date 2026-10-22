@@ -15,8 +15,9 @@ Live at **https://budkode.github.io/MeBlog/**
   - Cody McReanor (`/cody/`): sci-fi and fantasy fiction
   - Jackie McReanor (`/jackie/`)
 - **In progress** lists on the home page and each pen page, from `src/data/progress.json`.
-  Each entry needs `owner` (`main`, `cody` or `jackie`) and `title`, plus either a
-  `status` label or a real `percent`, and an optional `note`.
+  Each entry needs `owner` (`main`, `cody` or `jackie`; an entry only shows on that
+  owner's page) and `title`, plus either a real `percent` or a `status` label, and an
+  optional `note` and `url`.
 
 ## Add a post
 
@@ -45,7 +46,7 @@ Pen-name post: create `src/content/pen/<pen-id>/<slug>.md`, where `<pen-id>` is
 title: "Post title"
 description: "Short summary."
 pubDatetime: 2026-10-22T12:00:00Z
-kind: excerpt   # post | news | excerpt | book-update
+kind: excerpt # post | news | excerpt | book-update
 tags:
   - excerpt
 ---

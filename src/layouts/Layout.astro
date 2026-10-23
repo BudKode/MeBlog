@@ -30,6 +30,8 @@ const {
   author = site.author,
 } = Astro.props;
 
+const copyright = `Copyright © ${new Date().getFullYear()} ${site.author}. All rights reserved.`;
+
 const socialImageURL = new URL(ogImage, Astro.site ?? Astro.url);
 // getAssetPath (not getRelativeLocaleUrl) so the feed URL has no trailing slash.
 const rssHref = getAssetPath("rss.xml");
@@ -60,6 +62,7 @@ const rssHref = getAssetPath("rss.xml");
     <meta name="title" content={title} />
     <meta name="description" content={description} />
     <meta name="author" content={author} />
+    <meta name="copyright" content={copyright} />
     <link rel="sitemap" href={getAssetPath("sitemap-index.xml")} />
 
     <!-- Open Graph -->

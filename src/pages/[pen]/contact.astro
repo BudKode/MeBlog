@@ -54,9 +54,13 @@ const contact = pen.contact!;
         </li>
       </ul>
       <p>
-        Or write to me directly at 
-        <EmailLink user={contact.user} domain={contact.domain} />.
+        Or write to me directly at
       </p>
+      <ul>
+        <li>
+          <EmailLink user={contact.user} domain={contact.domain} />
+        </li>
+      </ul>
     </div>
   </main>
 

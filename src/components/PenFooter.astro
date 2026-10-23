@@ -2,6 +2,7 @@
 import { getRelativeLocaleUrl } from "astro:i18n";
 import type { PenName } from "@/penNames";
 import config from "@/config";
+import { penUrl } from "@/utils/pen";
 
 type Props = { pen: PenName };
 
@@ -18,6 +19,16 @@ const copyrightUrl = getRelativeLocaleUrl(config.site.lang, "copyright");
     <span>
       {`© ${year} ${pen.name}. `}
       <a href={copyrightUrl} class="hover:text-accent">All rights reserved.</a>
+      {
+        pen.contact && (
+          <>
+            {" · "}
+            <a href={penUrl(pen.id, "contact")} class="hover:text-accent">
+              Contact
+            </a>
+          </>
+        )
+      }
     </span>
     {
       pen.linkBackToMain && (

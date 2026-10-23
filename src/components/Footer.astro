@@ -14,6 +14,10 @@ const { noMarginTop = false, class: className, ...attrs } = Astro.props;
 
 const t = useTranslations(Astro.currentLocale);
 const currentYear = new Date().getFullYear();
+const contactUrl = getRelativeLocaleUrl(
+  Astro.currentLocale ?? config.site.lang,
+  "contact"
+);
 const copyrightUrl = getRelativeLocaleUrl(
   Astro.currentLocale ?? config.site.lang,
   "copyright"
@@ -36,6 +40,8 @@ const copyrightUrl = getRelativeLocaleUrl(
       <a href={copyrightUrl} class="hover:text-accent">
         {t.footer.allRightsReserved}
       </a>
+      <span class="hidden sm:inline">&nbsp;|&nbsp;</span>
+      <a href={contactUrl} class="hover:text-accent">Contact</a>
     </div>
   </div>
   <PenLinks />

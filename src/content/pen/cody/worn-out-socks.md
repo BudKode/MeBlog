@@ -10,7 +10,7 @@ tags:
   - writing
 ---
 
-I can't believe it has been this long but I wrote this back in 2022. It was delivered orally before that. At the time my family and I lived in Woodbury Minnesota and it was at least a 25 minute drive to anywhere we wanted to go except for a target or a lake.
+I can't believe it has been this long but I wrote this back in 2022. It was delivered orally before that. At the time my family and I lived in Woodbury, Minnesota and it was at least a 25 minute drive to anywhere we wanted to go except for a Target or a lake.
 
 Our first child would get upset sitting in the car for so long (this was back before we just gave our kids an iPad whenever they wanted one) and so we came up with a creative and interactive way to entertain ourselves on the long drives. We would each take a turn coming up with a story on the spot. My son had probably one coherent one the whole time we lived there but he was two and so I was impressed. I had a few that I was actually pretty proud of but don't remember many. This is one that I took the time to write.
 
@@ -18,11 +18,11 @@ I hope you enjoy it.
 
 ---
 
-_Stories from the Road Worn Out Socks_
+_Stories from the Road: Worn Out Socks_
 
 ## Fergus’ Darned Socks
 
-_By Tanner Cranor_
+_By Cody McReanor_
 
 There was an old man named Fergus McKiltan\
 who often made fun of new trends.
@@ -84,7 +84,7 @@ his poor sock held clenched in his hand.
 
 “It’s just that-”, Tom began.\
 “Never mind!” Fergus spat,\
-“just show me your most dull and bland”
+“just show me your most dull and bland.”
 
 They wandered down aisles of grays, browns, and blacks.\
 Tom did his best to stay strong.
@@ -104,7 +104,7 @@ and hunt on the world wide web.
 
 But the landscape had changed!\
 Flashing ads screamed his name!\
-He pushed on through confusion and dread
+He pushed on through confusion and dread.
 
 When at last he succeeded\
 he bought more than he needed,\
@@ -116,10 +116,10 @@ He knew that he’d have socks to spare.
 
 When the new socks arrived,\
 he wore two at a time!\
-No stiches to bother his toes.
+No stitches to bother his toes.
 
 “What’s more,” he declared,\
-“I’ll see no more sock sales!”\
+“I’ll need no more sock wares!”\
 Then he felt a sock rip and he froze.
 
 His shock soon abandoned,\
@@ -162,7 +162,7 @@ he would never have learned\
 spending years more with them, toiling.
 
 Fergus knew he’d learned a lesson that day.\
-He’d no longer treat salesman poorly.
+He’d no longer treat salesmen poorly.
 
 He apologized\
 and the look in his eyes\
@@ -174,4 +174,4 @@ and thinks twice before making decisions.
 
 He checks what he knows,\
 before patching old holes,\
-and what he does buy make for great new traditions.
+and what he does buy makes for great new traditions.

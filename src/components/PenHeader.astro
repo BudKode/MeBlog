@@ -14,6 +14,7 @@ const t = useTranslations(Astro.currentLocale ?? config.site.lang);
 
 const path = stripBase(Astro.url.pathname).replace(/\/+$/, "");
 const onAbout = path.endsWith("/about");
+const onContact = path.endsWith("/contact");
 ---
 
 <a
@@ -35,12 +36,25 @@ const onAbout = path.endsWith("/about");
       class="[&_a]:hover:text-accent flex items-center gap-x-5 font-medium"
       aria-label={pen.name}
     >
-      <a href={penUrl(pen.id)} class:list={{ "active-nav": !onAbout }}>
+      <a
+        href={penUrl(pen.id)}
+        class:list={{ "active-nav": !onAbout && !onContact }}
+      >
         Writing
       </a>
       <a href={penUrl(pen.id, "about")} class:list={{ "active-nav": onAbout }}>
         {t.nav.about}
       </a>
+      {
+        pen.contact && (
+          <a
+            href={penUrl(pen.id, "contact")}
+            class:list={{ "active-nav": onContact }}
+          >
+            Contact
+          </a>
+        )
+      }
       {
         config.features.lightAndDarkMode && (
           <button

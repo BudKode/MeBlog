@@ -23,4 +23,7 @@ The site's code comes from the open-source [AstroPaper](https://github.com/satna
 
 ## Asking permission
 
-If you'd like to use something, reach out through one of the links on the [About page](/MeBlog/about/).
+If you'd like to use something, reach out first:
+
+- **My writing** (including Cody McReanor's stories): see [Cody's contact page](/MeBlog/cody/contact/).
+- **My 3D designs**, including licenses to sell prints: see my [contact page](/MeBlog/contact/).

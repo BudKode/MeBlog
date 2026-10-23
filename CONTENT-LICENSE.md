@@ -36,5 +36,9 @@ belongs to its respective owners.
 
 ## Asking permission
 
-To ask about using something, reach out through the contact links on the
-site's [About page](https://budkode.github.io/MeBlog/about/) (GitHub or LinkedIn).
+To ask about using something, email:
+
+- **Writing** (stories, excerpts, posts, including the pen names):
+  moonlightrighter@gmail.com, or see https://budkode.github.io/MeBlog/cody/contact/
+- **3D designs and images of them**, including licenses to sell prints:
+  budkodedesigns@gmail.com, or see https://budkode.github.io/MeBlog/contact/

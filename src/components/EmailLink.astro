@@ -1,0 +1,38 @@
+---
+/**
+ * A plain mailto link (works without JS) with the address written as HTML
+ * character references, so simple scrapers that grep the page source for
+ * "name@domain" don't pick it up. Browsers decode it as normal.
+ */
+type Props = {
+  /** Mailbox name, the part before "@". */
+  user: string;
+  domain: string;
+  /** Prefilled subject line. */
+  subject?: string;
+  /** Link text; defaults to the address itself. */
+  label?: string;
+  class?: string;
+};
+
+const { user, domain, subject, label, class: className = "" } = Astro.props;
+
+const encode = (value: string) =>
+  [...value].map(char => `&#${char.codePointAt(0)};`).join("");
+const escapeHtml = (value: string) =>
+  value.replace(
+    /[&<>"']/g,
+    char =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
+        char
+      ] ?? char
+  );
+
+const address = `${user}@${domain}`;
+const href = `mailto:${address}${subject ? `?subject=${encodeURIComponent(subject)}` : ""}`;
+const html = `<a href="${encode(href)}" class="${escapeHtml(className)}">${
+  label ? escapeHtml(label) : encode(address)
+}</a>`;
+---
+
+<Fragment set:html={html} />

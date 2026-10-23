@@ -17,6 +17,8 @@ export type PenName = {
   showOnMainSite: boolean;
   /** Show a small, muted link back to the main site in this section's footer. */
   linkBackToMain: boolean;
+  /** Optional contact address (split so it isn't one plain string). Adds /<id>/contact/. */
+  contact?: { user: string; domain: string };
 };
 
 export const penNames: PenName[] = [
@@ -27,6 +29,7 @@ export const penNames: PenName[] = [
     bio: "Cody McReanor writes atmospheric sci-fi and fantasy fiction. Short stories, novel excerpts, and progress updates live here.",
     showOnMainSite: true,
     linkBackToMain: true,
+    contact: { user: "moonlightrighter", domain: "gmail.com" },
   },
   {
     id: "jackie",

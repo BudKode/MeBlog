@@ -1,0 +1,64 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import PenHeader from "@/components/PenHeader.astro";
+import PenFooter from "@/components/PenFooter.astro";
+import EmailLink from "@/components/EmailLink.astro";
+import { penNames, type PenName } from "@/penNames";
+
+// Only pen names with a contact address get a contact page.
+export async function getStaticPaths() {
+  return penNames
+    .filter(pen => pen.contact)
+    .map(pen => ({ params: { pen: pen.id }, props: { pen } }));
+}
+
+type Props = { pen: PenName };
+
+const { pen } = Astro.props;
+const contact = pen.contact!;
+---
+
+<Layout
+  title={`Contact | ${pen.name}`}
+  description={`Publishing inquiries and permission requests for ${pen.name}.`}
+  pen={pen.id}
+  siteName={pen.name}
+  author={pen.name}
+>
+  <PenHeader pen={pen} />
+
+  <main id="main-content" class="app-layout pb-8">
+    <h1 class="mt-8 text-2xl font-semibold sm:text-3xl">Contact</h1>
+    <div class="app-prose mt-6">
+      <p>
+        Thanks for reading. If you're an agent, editor or publisher, or you'd
+        like permission to use something I've written, I'd love to hear from
+        you.
+      </p>
+      <ul>
+        <li>
+          <EmailLink
+            user={contact.user}
+            domain={contact.domain}
+            subject="Publishing inquiry"
+            label="Publishing inquiries"
+          />
+        </li>
+        <li>
+          <EmailLink
+            user={contact.user}
+            domain={contact.domain}
+            subject="Permission to use your writing"
+            label="Permission to use my writing"
+          />
+        </li>
+      </ul>
+      <p>
+        Or write to me directly at
+        <EmailLink user={contact.user} domain={contact.domain} />.
+      </p>
+    </div>
+  </main>
+
+  <PenFooter pen={pen} />
+</Layout>

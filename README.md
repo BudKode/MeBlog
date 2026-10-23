@@ -14,6 +14,10 @@ Live at **https://budkode.github.io/MeBlog/**
 - **Pen names**, each with its own section, colors and bio (`src/penNames.ts`):
   - Cody McReanor (`/cody/`): sci-fi and fantasy fiction
   - Jackie McReanor (`/jackie/`)
+- **Contact pages**: `/contact/` (`src/pages/contact.astro`: print licensing and Databricks
+  work) and `/cody/contact/` (publishing and permissions; address set in `contact` in
+  `src/penNames.ts`). Emails render through `src/components/EmailLink.astro`, which encodes
+  the address so it isn't plain text in the page source; links still work without JS.
 - **In progress** lists on the home page and each pen page, from `src/data/progress.json`.
   Each entry needs `owner` (`main`, `cody` or `jackie`; an entry only shows on that
   owner's page) and `title`, plus either a real `percent` or a `status` label, and an

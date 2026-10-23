@@ -1,0 +1,69 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import Main from "@/components/Main.astro";
+import Footer from "@/components/Footer.astro";
+import EmailLink from "@/components/EmailLink.astro";
+import { penUrl } from "@/utils/pen";
+import config from "@/config";
+
+const linkedin = config.socials.find(s => s.name === "linkedin")?.url;
+---
+
+<Layout
+  title={`Contact | ${config.site.title}`}
+  description="How to reach Tanner Cranor about 3D design print licensing or Databricks contract work."
+>
+  <Header />
+
+  <Breadcrumb />
+
+  <Main pageTitle="Contact" class="app-prose">
+    <p>
+      Thanks for stopping by. The best way to reach me depends on what it's
+      about.
+    </p>
+
+    <h2>Selling prints of my 3D designs</h2>
+    <p>
+      Want to sell prints of one of my designs? I offer limited licenses for
+      that. Let me know which design and how you'd like to use it.
+    </p>
+    <p>
+      <EmailLink
+        user="budkodedesigns"
+        domain="gmail.com"
+        subject="Print licensing request"
+      />
+    </p>
+
+    <h2>Self-serve Databricks setup</h2>
+    <p>
+      I take on contract work setting up self-serve Databricks. Send me a note
+      about what you're working with.
+    </p>
+    <p>
+      <EmailLink
+        user="tannerbudc"
+        domain="gmail.com"
+        subject="Databricks contract work"
+      />
+    </p>
+
+    {
+      linkedin && (
+        <p>
+          You can also find me on <a href={linkedin}>LinkedIn</a>.
+        </p>
+      )
+    }
+
+    <p>
+      Questions about my fiction, or permission to use it, go to
+      <a href={penUrl("cody", "contact")}>Cody McReanor's contact page</a>.
+    </p>
+  </Main>
+
+  <Footer />
+</Layout>

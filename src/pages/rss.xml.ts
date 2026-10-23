@@ -35,5 +35,6 @@ export async function GET() {
     // Include the base path (/MeBlog/) so the channel link points at the site.
     site: new URL(import.meta.env.BASE_URL, config.site.url).href,
     items,
+    customData: `<copyright>Copyright © ${new Date().getFullYear()} ${config.site.author}. All rights reserved.</copyright>`,
   });
 }

@@ -71,6 +71,25 @@ Every push to `main` builds the site and publishes it to GitHub Pages via
 `.github/workflows/deploy.yml`. The site is served under the `/MeBlog` base path
 (set in `astro.config.ts`); site settings live in `astro-paper.config.ts`.
 
+## License
+
+This repo has two licenses:
+
+- **Code: MIT.** The site's source code comes from
+  [AstroPaper](https://github.com/satnaing/astro-paper) by Sat Naing and keeps its
+  MIT license (see [`LICENSE`](LICENSE)). It covers the code only.
+- **Content: all rights reserved.** Everything original published on the site,
+  including posts, short stories, novel excerpts, design write-ups, bios and
+  images in `src/content/**`, `src/assets/**` and `public/**` (except template
+  files), is © Tanner Cranor, including work under the pen names Cody McReanor
+  and Jackie McReanor. No reuse without written permission; brief quotes for
+  review or commentary are fine. See [`CONTENT-LICENSE.md`](CONTENT-LICENSE.md).
+
+The site shows the same policy at `/copyright/`, a copyright line in the footer,
+and a notice at the end of every post (pen-name posts say "writing as <pen name>").
+The notice comes from `src/components/CopyrightNotice.astro` and the page text
+from `src/content/pages/copyright.md`.
+
 ## Credits
 
 Built on [AstroPaper](https://github.com/satnaing/astro-paper) by Sat Naing (MIT license, see `LICENSE`).

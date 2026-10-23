@@ -8,13 +8,17 @@ type Props = { pen: PenName };
 const { pen } = Astro.props;
 const year = new Date().getFullYear();
 const mainUrl = getRelativeLocaleUrl(config.site.lang, "");
+const copyrightUrl = getRelativeLocaleUrl(config.site.lang, "copyright");
 ---
 
 <footer class="app-layout mt-auto">
   <div
     class="border-border flex flex-col items-center justify-between gap-1 border-t py-6 sm:flex-row sm:py-4"
   >
-    <span>&#169; {year} {pen.name}</span>
+    <span>
+      {`© ${year} ${pen.name}. `}
+      <a href={copyrightUrl} class="hover:text-accent">All rights reserved.</a>
+    </span>
     {
       pen.linkBackToMain && (
         <a

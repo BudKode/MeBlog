@@ -1,0 +1,28 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import type { PenName } from "@/penNames";
+import config from "@/config";
+
+type Props = {
+  /** Publication date; the notice shows its year (site timezone). */
+  pubDatetime: Date;
+  /** Set on pen-name posts to add "writing as <pen name>". */
+  pen?: PenName;
+};
+
+const { pubDatetime, pen } = Astro.props;
+const year = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  timeZone: config.site.timezone,
+}).format(pubDatetime);
+const copyrightUrl = getRelativeLocaleUrl(config.site.lang, "copyright");
+---
+
+<p
+  class="copyright-notice text-muted-foreground mt-8 text-sm"
+  data-pagefind-ignore
+>
+  {`© ${year} ${config.site.author}${pen ? `, writing as ${pen.name}` : ""}. `}
+  {"All rights reserved. No reproduction without permission. "}
+  <a href={copyrightUrl} class="hover:text-accent underline">Copyright info</a>
+</p>

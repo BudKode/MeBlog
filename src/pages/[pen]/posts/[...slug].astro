@@ -4,6 +4,7 @@ import Layout from "@/layouts/Layout.astro";
 import PenHeader from "@/components/PenHeader.astro";
 import PenFooter from "@/components/PenFooter.astro";
 import Datetime from "@/components/Datetime.astro";
+import CopyrightNotice from "@/components/CopyrightNotice.astro";
 import { penNames, type PenName } from "@/penNames";
 import {
   getPenPosts,
@@ -70,6 +71,8 @@ const { Content } = await render(entry);
     <article id="article" class="app-prose max-w-app mt-8 w-full">
       <Content />
     </article>
+
+    <CopyrightNotice {pubDatetime} pen={pen} />
 
     {
       tags.length > 0 && (

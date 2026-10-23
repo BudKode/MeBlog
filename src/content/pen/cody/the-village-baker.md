@@ -14,11 +14,11 @@ The only other story from the road that has been written down to date. I hope to
 
 ---
 
-_Stories from the Road The Village Baker_
+_Stories from the Road: The Village Baker_
 
 ## The Village Baker
 
-_By Tanner Cranor_
+_By Cody McReanor_
 
 Deep in the mountains, where the water runs clear and the breeze is bridled by the weathered peaks, there lived a town full of hard-working people and one hard-working baker.
 
@@ -44,7 +44,7 @@ The village councilmen looked worried, but instead of shouting, one of the counc
 
 As he stomped up a hill, he passed family after family, each hard at work to restore order to their homes. His stomp soon turned into a stiff stride, then a slow walk, until finally he could go no further. He paused his ascent and sank into the shadow of the nearby homes to watch the scene around him. He watched a little boy and girl herding frightened goats back under a hastily reconstructed shelter while their mother swept at drifted piles of broken shingles. He turned and looked back down the road to see other families performing similar chores, but what stood out to him most were the children. None of them complained as they worked. These were tasks many would have begged to avoid, especially given the hour of night, but under these circumstances he heard not even a whimper or sigh.
 
-There was no way the baker could go to sleep with such brave little volunteers bustling around him. How could he complain when they worked so quietly and faithfully? As his hard heart began to melt, he felt sorry for the way he’d shouted at the councilmembers. The key weighed especially heavy in his hand and so he stuffed it into his pocket and turned back towards the center of town.
+There was no way the baker could go to sleep with such brave little volunteers bustling around him. How could he complain when they worked so quietly and faithfully? As his hard heart began to melt, he felt sorry for the way he’d shouted at the councilmen. The key weighed especially heavy in his hand and so he stuffed it into his pocket and turned back towards the center of town.
 
 This time when he arrived at his bakery, he waded through the wreckage and stepped over his fallen oven to grab his apron. He dusted it off and turned to his cupboards. Flour had settled over the rubble like snow, but most of his ingredients were fine. He began to mix dough for bread, all the while thinking of those brave little children. He was thinking of the two siblings herding goats when he noticed an old crockery pot peeking out of a damaged cupboard, and he got an idea.
 

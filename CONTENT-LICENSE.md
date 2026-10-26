@@ -1,7 +1,11 @@
 # Content license
 
-Copyright © 2026 Tanner Cranor (writing as Cody McReanor and Jackie McReanor).
-All rights reserved.
+All rights reserved. Each work belongs to its author:
+
+- **Tanner Cranor:** the main site and all work published as Cody McReanor.
+  Copyright © 2026 Tanner Cranor.
+- **Lauren Cranor:** all work published as Jackie McReanor.
+  Copyright © 2026 Lauren Cranor.
 
 ## What this covers
 
@@ -22,7 +26,8 @@ The site's source code is separate and is covered by the MIT license in
 
 No license is granted to copy, reproduce, republish, distribute, translate,
 adapt or create derivative works from this content, in whole or in part,
-without written permission from Tanner Cranor.
+without written permission from its author (Tanner Cranor or Lauren Cranor,
+as listed above).
 
 Making the content publicly visible here, or on GitHub, does not grant any of
 those rights. Forking or cloning the repository for its code is fine; the
@@ -38,7 +43,10 @@ belongs to its respective owners.
 
 To ask about using something, email:
 
-- **Writing** (stories, excerpts, posts, including the pen names):
-  moonlightrighter@gmail.com, or see https://budkode.github.io/MeBlog/cody/contact/
+- **Cody McReanor's writing:** moonlightrighter@gmail.com, or see
+  https://budkode.github.io/MeBlog/cody/contact/
+- **Jackie McReanor's writing** (Lauren Cranor): for now, use the site's contact
+  page, https://budkode.github.io/MeBlog/contact/, and the request will be
+  passed on to Lauren
 - **3D designs and images of them**, including licenses to sell prints:
   budkodedesigns@gmail.com, or see https://budkode.github.io/MeBlog/contact/

@@ -4,6 +4,7 @@ import { ClientRouter } from "astro:transitions";
 import { resolveDefaultOgImagePath } from "@/utils/resolveDefaultOgImagePath";
 import { getAssetPath } from "@/utils/withBase";
 import config from "@/config";
+import { getPen } from "@/penNames";
 import "@/styles/global.css";
 
 type Props = {
@@ -30,7 +31,8 @@ const {
   author = site.author,
 } = Astro.props;
 
-const copyright = `Copyright © ${new Date().getFullYear()} ${site.author}. All rights reserved.`;
+const copyrightHolder = (pen && getPen(pen)?.legalName) || site.author;
+const copyright = `Copyright © ${new Date().getFullYear()} ${copyrightHolder}. All rights reserved.`;
 
 const socialImageURL = new URL(ogImage, Astro.site ?? Astro.url);
 // getAssetPath (not getRelativeLocaleUrl) so the feed URL has no trailing slash.

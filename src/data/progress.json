@@ -31,5 +31,17 @@
     "title": "Omega: first-draft revision",
     "kind": "book",
     "percent": 20
+  },
+  {
+    "owner": "jackie",
+    "title": "Apis: first draft",
+    "kind": "book",
+    "percent": 100
+  },
+  {
+    "owner": "jackie",
+    "title": "Apis: first-draft revision",
+    "kind": "book",
+    "percent": 30
   }
 ]

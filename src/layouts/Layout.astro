@@ -53,7 +53,15 @@ const rssHref = getAssetPath("rss.xml");
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Font -->
+    <!-- Fonts (self-hosted at build time) -->
+    <Font
+      cssVariable="--font-inter"
+      preload={[{ subset: "latin", weight: 400, style: "normal" }]}
+    />
+    <Font
+      cssVariable="--font-literata"
+      preload={[{ subset: "latin", weight: 400, style: "normal" }]}
+    />
     <Font
       cssVariable="--font-google-sans-code"
       preload={[{ subset: "latin", weight: 400, style: "normal" }]}

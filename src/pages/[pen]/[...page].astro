@@ -38,7 +38,7 @@ const { page, pen } = Astro.props;
     {
       page.currentPage === 1 && (
         <section class="border-border border-b pt-10 pb-8">
-          <h1 class="text-4xl font-bold sm:text-5xl">{pen.name}</h1>
+          <h1 class="font-serif text-4xl font-bold sm:text-5xl">{pen.name}</h1>
           <p class="text-muted-foreground mt-3 italic">{pen.tagline}</p>
           <p class="mt-4">{pen.bio}</p>
         </section>

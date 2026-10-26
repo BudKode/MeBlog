@@ -136,3 +136,86 @@
     }
   }
 }
+
+/* ===== Long-form reading (post and story bodies) ===== */
+/* Unlayered so it wins over the Typography plugin defaults. */
+.app-prose {
+  font-family: var(--font-serif);
+}
+.app-prose :is(h1, h2, h3, h4, h5, h6, th, figcaption, .callout-title) {
+  font-family: var(--font-app);
+  letter-spacing: -0.01em;
+}
+.app-prose :is(code, pre, kbd, samp) {
+  font-family: var(--font-mono);
+}
+
+.reading {
+  max-width: 68ch;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+@media (min-width: 640px) {
+  .reading {
+    font-size: 1.1875rem;
+  }
+}
+
+/* ===== Story extras (pen-name posts) ===== */
+
+/* Scene breaks: a centered ornament instead of a rule. */
+.story hr {
+  display: block;
+  width: 100%;
+  border: 0;
+  height: auto;
+  margin-block: 2.5em;
+  text-align: center;
+  overflow: visible;
+}
+.story hr::after {
+  content: "*\2003*\2003*";
+  display: block;
+  white-space: nowrap;
+  color: var(--accent);
+  font-family: var(--font-serif);
+  font-size: 1.25em;
+  line-height: 1;
+}
+
+/*
+ * Drop cap on the first paragraph of the story itself:
+ * - after the title heading and an italic byline line, or straight after the heading;
+ * - or on the opening paragraph when the post has no divider/intro.
+ * Skipped for verse (paragraphs with <br> line breaks), so poems keep plain lines.
+ */
+.story hr ~ h2:first-of-type + p:has(> em:only-child) + p:not(:has(br))::first-letter,
+.story hr ~ h2:first-of-type + p:not(:has(> em:only-child)):not(:has(br))::first-letter,
+.story:not(:has(hr)) > p:first-child:not(:has(br))::first-letter {
+  float: inline-start;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 3.4em;
+  line-height: 0.85;
+  margin-block-start: 0.08em;
+  margin-inline-end: 0.08em;
+  color: var(--accent);
+}
+
+/* Story title block: series line and byline, centered and quiet. */
+.story hr ~ p:has(> em:only-child):has(+ h2),
+.story hr ~ h2:first-of-type,
+.story hr ~ h2:first-of-type + p:has(> em:only-child) {
+  text-align: center;
+}
+.story hr ~ p:has(> em:only-child):has(+ h2) {
+  color: var(--muted-foreground);
+  margin-bottom: 0.25em;
+}
+.story hr ~ h2:first-of-type {
+  margin-top: 0;
+}
+.story hr ~ h2:first-of-type + p:has(> em:only-child) {
+  color: var(--muted-foreground);
+  margin-bottom: 2em;
+}

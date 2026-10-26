@@ -7,28 +7,41 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
-  --font-app: var(--font-google-sans-code);
+  /* UI, nav and headings */
+  --font-app: var(--font-inter);
+  --font-sans: var(--font-inter);
+  /* Long-form reading */
+  --font-serif: var(--font-literata);
+  /* Code */
+  --font-mono: var(--font-google-sans-code);
 }
+
+/*
+ * Palette sampled from public/default-og.jpg:
+ * navy #13213c (background), amber #f3a261 (badge), cream #f5f1e8 (title),
+ * slate #95a3be (URL). Light theme darkens the amber for text contrast.
+ * All text/background pairs meet WCAG AA (4.5:1) or better.
+ */
 
 /* Light theme values */
 :root,
 [data-theme="light"] {
-  --background: #fdfdfd;
-  --foreground: #282728;
-  --accent: #006cac;
+  --background: #fbf8f1;
+  --foreground: #13213c;
+  --accent: #a14a0f;
   --accent-foreground: #ffffff;
-  --muted: #e6e6e6;
-  --muted-foreground: #6b7280;
-  --border: #ece9e9;
+  --muted: #efe8da;
+  --muted-foreground: #4f5b73;
+  --border: #e4dccb;
 }
 
 /* Dark theme values */
 [data-theme="dark"] {
-  --background: #212737;
-  --foreground: #eaedf3;
-  --accent: #ff6b01;
-  --accent-foreground: #ffffff;
-  --muted: #343f60;
-  --muted-foreground: #afb9ca;
-  --border: #ab4b08;
+  --background: #13213c;
+  --foreground: #f5f1e8;
+  --accent: #f3a261;
+  --accent-foreground: #13213c;
+  --muted: #1d2d4f;
+  --muted-foreground: #a3b0c8;
+  --border: #2c3e64;
 }

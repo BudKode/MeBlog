@@ -43,6 +43,14 @@ const { title, description, pubDatetime, modDatetime, timezone, tags } =
   entry.data;
 
 const { Content } = await render(entry);
+
+// Reading time from the raw Markdown (about 230 words a minute).
+const words = (entry.body ?? "")
+  .replace(/^---[\s\S]*?---/, "")
+  .replace(/[#*_>`\\-]/g, " ")
+  .split(/\s+/)
+  .filter(Boolean).length;
+const readingMinutes = Math.max(1, Math.round(words / 230));
 ---
 
 <Layout
@@ -64,11 +72,13 @@ const { Content } = await render(entry);
 
     <h1 class="text-accent mt-4 text-2xl font-bold sm:text-3xl">{title}</h1>
 
-    <div class="my-2">
+    <div class="text-muted-foreground my-2 flex flex-wrap items-center gap-x-3">
       <Datetime {pubDatetime} {modDatetime} {timezone} size="lg" />
+      <span aria-hidden="true">·</span>
+      <span class="text-lg">{readingMinutes} min read</span>
     </div>
 
-    <article id="article" class="app-prose max-w-app mt-8 w-full">
+    <article id="article" class="app-prose reading story mt-8 w-full">
       <Content />
     </article>
 

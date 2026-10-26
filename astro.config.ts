@@ -60,6 +60,27 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   fonts: [
+    // UI / headings. Fonts are downloaded at build time and served from this
+    // site (no runtime calls to a font CDN).
+    {
+      name: "Inter",
+      cssVariable: "--font-inter",
+      provider: fontProviders.fontsource(),
+      fallbacks: ["system-ui", "sans-serif"],
+      weights: [400, 500, 600, 700],
+      styles: ["normal"],
+      subsets: ["latin"],
+    },
+    // Long-form reading (post and story bodies).
+    {
+      name: "Literata",
+      cssVariable: "--font-literata",
+      provider: fontProviders.fontsource(),
+      fallbacks: ["Georgia", "serif"],
+      weights: [400, 600, 700],
+      styles: ["normal", "italic"],
+      subsets: ["latin"],
+    },
     {
       name: "Google Sans Code",
       cssVariable: "--font-google-sans-code",

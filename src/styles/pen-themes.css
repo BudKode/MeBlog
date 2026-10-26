@@ -2,44 +2,71 @@
  * Per-pen-name color themes. Layout.astro sets <html data-pen="cody">.
  * Selectors are more specific than theme.css, so these always win.
  * To add a pen name, copy a pair of blocks and change the id and colors.
+ * All text/background pairs meet WCAG AA (4.5:1) or better.
  */
 
-/* Cody McReanor: ink and ember */
+/* Cody McReanor: deep teal and ink */
 [data-pen="cody"][data-theme="light"] {
-  --background: #faf7f2;
-  --foreground: #1f1b24;
-  --accent: #8c2f39;
+  --background: #f5f8f8;
+  --foreground: #14232b;
+  --accent: #1c6b73;
   --accent-foreground: #ffffff;
-  --muted: #ece5db;
-  --muted-foreground: #6b6270;
-  --border: #e3d9cc;
+  --muted: #e3ecec;
+  --muted-foreground: #4d6168;
+  --border: #d7e2e2;
 }
 [data-pen="cody"][data-theme="dark"] {
-  --background: #14161c;
-  --foreground: #e8e6ef;
-  --accent: #e8b44c;
-  --accent-foreground: #14161c;
-  --muted: #262a36;
-  --muted-foreground: #a2a6b8;
-  --border: #3a3f52;
+  --background: #0f1b20;
+  --foreground: #e3eeef;
+  --accent: #6cc4c6;
+  --accent-foreground: #0f1b20;
+  --muted: #1b2c33;
+  --muted-foreground: #9fb4b9;
+  --border: #2a4049;
 }
 
 /* Jackie McReanor: plum and rose */
 [data-pen="jackie"][data-theme="light"] {
-  --background: #fffafc;
-  --foreground: #2a2030;
-  --accent: #a23b72;
+  --background: #fdf8f9;
+  --foreground: #2a1d2a;
+  --accent: #8e3563;
   --accent-foreground: #ffffff;
-  --muted: #f3e6ee;
-  --muted-foreground: #735f78;
-  --border: #ecd8e4;
+  --muted: #f4e6ec;
+  --muted-foreground: #6e5a6c;
+  --border: #ecd9e2;
 }
 [data-pen="jackie"][data-theme="dark"] {
-  --background: #1d1626;
-  --foreground: #f1e9f5;
-  --accent: #f2a6c8;
-  --accent-foreground: #1d1626;
-  --muted: #33264a;
-  --muted-foreground: #b9a9c6;
-  --border: #4a3a63;
+  --background: #1f1622;
+  --foreground: #f3e9ef;
+  --accent: #ef9fc2;
+  --accent-foreground: #1f1622;
+  --muted: #33233a;
+  --muted-foreground: #bba7b8;
+  --border: #4a3550;
+}
+
+/* Pen mastheads: a thin accent rule above the header, name set in the serif. */
+[data-pen] .pen-masthead {
+  border-top: 3px solid var(--accent);
+}
+[data-pen] .pen-name {
+  font-family: var(--font-serif);
+  color: var(--accent);
+}
+/* Cody: upright small caps, spaced like a book spine. */
+[data-pen="cody"] .pen-name {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+/* Jackie: italic with a small fleuron. */
+[data-pen="jackie"] .pen-name {
+  font-style: italic;
+  font-weight: 600;
+}
+[data-pen="jackie"] .pen-name::before {
+  content: "❦";
+  font-style: normal;
+  margin-inline-end: 0.4em;
+  opacity: 0.8;
 }

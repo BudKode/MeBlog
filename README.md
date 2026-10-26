@@ -85,8 +85,9 @@ This repo has two licenses:
 - **Content: all rights reserved.** Everything original published on the site,
   including posts, short stories, novel excerpts, design write-ups, bios and
   images in `src/content/**`, `src/assets/**` and `public/**` (except template
-  files), is © Tanner Cranor, including work under the pen names Cody McReanor
-  and Jackie McReanor. No reuse without written permission; brief quotes for
+  files), is © its author: Tanner Cranor for the main site and Cody McReanor,
+  Lauren Cranor for Jackie McReanor (set per pen as `legalName` in
+  `src/penNames.ts`). No reuse without written permission; brief quotes for
   review or commentary are fine. See [`CONTENT-LICENSE.md`](CONTENT-LICENSE.md).
 
 The site shows the same policy at `/copyright/`, a copyright line in the footer,

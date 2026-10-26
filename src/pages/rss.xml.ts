@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import { getSortedPosts } from "@/utils/getSortedPosts";
 import { getPostUrl } from "@/utils/getPostPaths";
 import { penFilter, penOf, penPostUrl } from "@/utils/pen";
-import { getPen } from "@/penNames";
+import { getPen, penNames } from "@/penNames";
 import config from "@/config";
 
 export async function GET() {
@@ -35,6 +35,9 @@ export async function GET() {
     // Include the base path (/MeBlog/) so the channel link points at the site.
     site: new URL(import.meta.env.BASE_URL, config.site.url).href,
     items,
-    customData: `<copyright>Copyright © ${new Date().getFullYear()} ${config.site.author}. All rights reserved.</copyright>`,
+    // Channel-level only (RSS 2.0 has no per-item copyright). Pen posts belong to each pen's legalName.
+    customData: `<copyright>Copyright © ${new Date().getFullYear()} ${[
+      ...new Set([config.site.author, ...penNames.map(p => p.legalName)]),
+    ].join(" and ")}. All rights reserved.</copyright>`,
   });
 }

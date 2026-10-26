@@ -6,7 +6,7 @@ import config from "@/config";
 type Props = {
   /** Publication date; the notice shows its year (site timezone). */
   pubDatetime: Date;
-  /** Set on pen-name posts to add "writing as <pen name>". */
+  /** Set on pen-name posts: holder becomes pen.legalName, plus "writing as <pen name>". */
   pen?: PenName;
 };
 
@@ -22,7 +22,9 @@ const copyrightUrl = getRelativeLocaleUrl(config.site.lang, "copyright");
   class="copyright-notice text-muted-foreground mt-8 text-sm"
   data-pagefind-ignore
 >
-  {`© ${year} ${config.site.author}${pen ? `, writing as ${pen.name}` : ""}. `}
+  {
+    `© ${year} ${pen ? `${pen.legalName}, writing as ${pen.name}` : config.site.author}. `
+  }
   {"All rights reserved. No reproduction without permission. "}
   <a href={copyrightUrl} class="hover:text-accent underline">Copyright info</a>
 </p>

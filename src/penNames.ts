@@ -30,7 +30,7 @@ export const penNames: PenName[] = [
     legalName: "Tanner Cranor",
     tagline: "Atmospheric sci-fi and fantasy fiction.",
     bio: "Cody McReanor writes atmospheric sci-fi and fantasy fiction. Short stories, novel excerpts, and progress updates live here.",
-    showOnMainSite: true,
+    showOnMainSite: false,
     linkBackToMain: true,
     contact: { user: "moonlightrighter", domain: "gmail.com" },
   },

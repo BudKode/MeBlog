@@ -4,7 +4,7 @@ export default defineAstroPaperConfig({
   site: {
     url: "https://BudKode.github.io",
     title: "Tanner Cranor",
-    description: "Notes on data engineering, CAD and 3D printing, and writing sci-fi/fantasy.",
+    description: "Notes on data engineering, CAD, and 3D printing.",
     author: "Tanner Cranor",
     profile: "https://github.com/BudKode",
     ogImage: "default-og.jpg",

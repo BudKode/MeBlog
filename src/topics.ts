@@ -31,10 +31,4 @@ export const topics: Topic[] = [
       url: "https://makerworld.com/en/@user_3428406922",
     },
   },
-  {
-    slug: "writing",
-    title: "Writing",
-    blurb: "Craft notes and progress on my fiction.",
-    tags: ["writing"],
-  },
 ];

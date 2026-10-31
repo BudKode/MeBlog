@@ -3,13 +3,12 @@ title: "About"
 description: "Who I am and what this site is for."
 ---
 
-I'm Tanner Cranor, a senior data engineer working in Python and SQL on Databricks. Outside of work I design parts in CAD for 3D printing, and I'm revising the first draft of a sci-fi/fantasy novel.
+I'm Tanner Cranor, a senior data engineer working in Python and SQL on Databricks. Outside of work I design parts in CAD for 3D printing.
 
 This site is where I write about all of it:
 
 - **Data engineering**: pipelines, SQL patterns, and lessons from production
 - **CAD and 3D printing**: parametric designs, tolerances, and what the failed prints taught me. Right now that includes a modular mini cakestand with swappable tops and bases that connect on a peg system.
-- **Writing**: craft notes and progress on my fiction, which I publish as [Cody McReanor](/MeBlog/cody/)
 
 New interests get their own topics as they come along.
 

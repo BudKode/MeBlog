@@ -1,0 +1,1783 @@
+1
+00:00:00,080 --> 00:00:03,120
+I've been listening to a lot of videos about Grok Bot,
+
+2
+00:00:03,320 --> 00:00:08,580
+and the reason is because I'm a huge fan of Grok Bot and the support.
+
+3
+00:00:09,360 --> 00:00:13,150
+I'm a data engineer. I've worked with data bricks.
+
+4
+00:00:13,310 --> 00:00:14,730
+I've worked with other big data tools.
+
+5
+00:00:15,230 --> 00:00:18,560
+And on that journey, on that career path,
+
+6
+00:00:18,840 --> 00:00:21,160
+I've been encouraged to use AI at various points
+
+7
+00:00:21,160 --> 00:00:24,340
+and with various degrees of support.
+
+8
+00:00:25,260 --> 00:00:26,980
+For example, first company I worked with,
+
+9
+00:00:26,980 --> 00:00:29,400
+I worked with AI with a, you know,
+
+10
+00:00:29,700 --> 00:00:31,520
+really, really encouraged everybody to use AI,
+
+11
+00:00:31,720 --> 00:00:34,300
+but then anytime you wanted to actually connect it to anything
+
+12
+00:00:34,300 --> 00:00:39,640
+to let it work autonomously or do anything without just being kind of an assistant.
+
+13
+00:00:41,020 --> 00:00:46,160
+You had to go through this AI use case review council
+
+14
+00:00:46,860 --> 00:00:49,260
+that was made up of all of these heads in the company.
+
+15
+00:00:50,100 --> 00:00:51,760
+It was like a six-month process,
+
+16
+00:00:51,940 --> 00:00:55,400
+and I was like, no, it's not worth my time to write up a brief
+
+17
+00:00:55,400 --> 00:00:59,880
+and go, like, make that pitch and do all that stuff just to get us connected.
+
+18
+00:01:00,570 --> 00:01:03,970
+You know, I didn't get to recognize a lot of the value that AI could bring.
+
+19
+00:01:04,330 --> 00:01:08,220
+And to be fair, at the time, it couldn't do everything that it could do now.
+
+20
+00:01:08,700 --> 00:01:12,680
+And right now, for me, Grok Bot is like,
+
+21
+00:01:13,180 --> 00:01:15,420
+Grok Bot feels like what I was promised with AI.
+
+22
+00:01:16,200 --> 00:01:22,250
+And so I just wanted to kind of talk through how I'm using Grok Bot
+
+23
+00:01:22,250 --> 00:01:28,470
+and then where I feel like I can continue to go with it.
+
+24
+00:01:28,670 --> 00:01:34,360
+And then, you know, maybe you get some tips here
+
+25
+00:01:34,360 --> 00:01:38,770
+or some things to help you perform in the data space
+
+26
+00:01:38,770 --> 00:01:42,210
+or to perform in any kind of engineering space.
+
+27
+00:01:42,920 --> 00:01:47,980
+So if you haven't heard of Grok Bot, I highly recommend looking it up.
+
+28
+00:01:48,480 --> 00:01:52,040
+Basically, the main thing for me is just that you don't have to manage the context windows
+
+29
+00:01:52,040 --> 00:01:56,340
+because you have these highly specialized bots that are all on the team together.
+
+30
+00:01:56,620 --> 00:02:00,600
+They can all talk, they all share a VM, so they all technically have access
+
+31
+00:02:00,600 --> 00:02:04,460
+to the same information and processes and stuff like that.
+
+32
+00:02:04,520 --> 00:02:06,040
+But they'll respect each other's boundaries
+
+33
+00:02:06,040 --> 00:02:08,240
+even though they're operating on the same machine.
+
+34
+00:02:08,740 --> 00:02:12,580
+And then, usually, you'll just have one bot on top of all that
+
+35
+00:02:12,580 --> 00:02:15,490
+that can manage the rest of it for you
+
+36
+00:02:16,030 --> 00:02:18,650
+and can kind of hand off projects to individual bots
+
+37
+00:02:18,650 --> 00:02:23,790
+or, you know, just keep track of status across the sprawl
+
+38
+00:02:23,790 --> 00:02:27,290
+because you'll see over time, like, yeah, you'll create a lot of bots.
+
+39
+00:02:28,370 --> 00:02:29,550
+They're really, really useful.
+
+40
+00:02:30,050 --> 00:02:32,210
+But the main thing that's been beneficial for me
+
+41
+00:02:32,210 --> 00:02:34,190
+is just the ability to create that team.
+
+42
+00:02:35,240 --> 00:02:37,720
+So to give a little bit of background and context,
+
+43
+00:02:37,860 --> 00:02:39,220
+the role that I'm in right now,
+
+44
+00:02:40,440 --> 00:02:45,690
+I came from not a huge company but a larger company
+
+45
+00:02:45,690 --> 00:02:49,840
+where we had a data team that was, like, four, going on five,
+
+46
+00:02:50,500 --> 00:02:53,520
+back-end engineers just for, like, keeping the infrastructure going,
+
+47
+00:02:53,700 --> 00:02:55,120
+keeping Databricks, you know, plain,
+
+48
+00:02:55,620 --> 00:02:59,240
+getting all the data pipelines set up and managed
+
+49
+00:02:59,240 --> 00:03:03,580
+and managing the breakages when different APIs went out.
+
+50
+00:03:04,080 --> 00:03:09,440
+And then we had another team of, like, basically five of, like, data modelers
+
+51
+00:03:09,440 --> 00:03:13,200
+and people who were supposed to start learning to do, like, some BI work.
+
+52
+00:03:14,340 --> 00:03:16,080
+And rather than just the modeling.
+
+53
+00:03:16,820 --> 00:03:18,640
+But that was still kind of new form,
+
+54
+00:03:18,780 --> 00:03:20,780
+so they were still kind of inching into that field.
+
+55
+00:03:21,880 --> 00:03:25,000
+And now I'm in a role where it's just me for all of it,
+
+56
+00:03:25,160 --> 00:03:27,640
+for the data modeling side, for the BI work,
+
+57
+00:03:27,820 --> 00:03:31,440
+for the back-end, you know, Python API scripts
+
+58
+00:03:32,040 --> 00:03:34,320
+to pull data, do the incremental loads.
+
+59
+00:03:34,820 --> 00:03:38,860
+And, you know, I took the job knowing, like, hey, you know,
+
+60
+00:03:38,860 --> 00:03:42,300
+this is a lot to ask of a single senior data engineer.
+
+61
+00:03:43,340 --> 00:03:46,780
+And so this is an opportunity for me to really, like, show what I can do
+
+62
+00:03:46,780 --> 00:03:48,480
+and leverage that into, like, hey, you know,
+
+63
+00:03:48,600 --> 00:03:53,240
+this role is really more of a, you know, manager of BI, manager of data.
+
+64
+00:03:53,740 --> 00:03:56,000
+So I came in, I implemented Databricks,
+
+65
+00:03:56,560 --> 00:03:59,200
+and to be fair to Claude, Claude helped me do that.
+
+66
+00:04:00,200 --> 00:04:02,980
+I'd done a lot of the work with Databricks before,
+
+67
+00:04:03,380 --> 00:04:07,220
+but there were parts of, like, the deep back-end infrastructure
+
+68
+00:04:07,220 --> 00:04:11,100
+that I didn't set up. I used it a lot, but I wasn't the one who set it up.
+
+69
+00:04:11,340 --> 00:04:12,580
+I had an architect who did that.
+
+70
+00:04:13,560 --> 00:04:16,020
+And so I used Claude to really help me fill in the gaps there
+
+71
+00:04:16,020 --> 00:04:18,880
+and deploy Databricks in, like, less than a month, which was crazy.
+
+72
+00:04:19,780 --> 00:04:21,780
+Especially because it was on Azure and I was used to AWS.
+
+73
+00:04:22,220 --> 00:04:26,460
+Like, yeah, it just, it definitely doubled,
+
+74
+00:04:26,940 --> 00:04:31,440
+it got tripled by my speed and output over that month.
+
+75
+00:04:31,940 --> 00:04:34,940
+And that was important because, you know,
+
+76
+00:04:34,940 --> 00:04:37,660
+I was pitching this new data tool where they were on Power BI,
+
+77
+00:04:37,860 --> 00:04:41,500
+they were on, like, SQL Server Management Studio and Fivetran,
+
+78
+00:04:42,040 --> 00:04:44,660
+and I was pitching this on, like, yeah, I can do it cheaper,
+
+79
+00:04:45,560 --> 00:04:46,940
+but also I can do it better.
+
+80
+00:04:48,000 --> 00:04:52,060
+And it's not going to be, you know, a year-long implementation.
+
+81
+00:04:52,320 --> 00:04:54,360
+I can probably do this in, like, three months.
+
+82
+00:04:54,960 --> 00:04:55,900
+And I got it done in a month.
+
+83
+00:04:56,870 --> 00:04:59,410
+And so to be able to just hit the grud running
+
+84
+00:04:59,410 --> 00:05:02,170
+and deliver value immediately was amazing.
+
+85
+00:05:02,170 --> 00:05:06,890
+And it definitely got me the kind of trust capital
+
+86
+00:05:06,890 --> 00:05:10,230
+that I needed to continue to grow in the role
+
+87
+00:05:10,230 --> 00:05:11,710
+and get the autonomy that I needed
+
+88
+00:05:11,710 --> 00:05:13,930
+to operate the way that I wanted to.
+
+89
+00:05:15,340 --> 00:05:18,700
+But then Grok Bot came and showed up.
+
+90
+00:05:19,920 --> 00:05:22,360
+So the pain points that I'd been struggling with up to that point
+
+91
+00:05:22,360 --> 00:05:27,360
+were that I could write Python connectors with Claude
+
+92
+00:05:27,880 --> 00:05:30,180
+and then, you know, I could have it
+
+93
+00:05:30,900 --> 00:05:33,480
+write to, you know, files on my local computer.
+
+94
+00:05:33,980 --> 00:05:38,160
+And so I could basically be hands-off with the connector work,
+
+95
+00:05:38,460 --> 00:05:39,960
+but I could only really do one at a time.
+
+96
+00:05:40,460 --> 00:05:42,980
+And then, you know, testing it was a matter of, like,
+
+97
+00:05:43,000 --> 00:05:45,300
+okay, we've committed it, we're pushing it, running it.
+
+98
+00:05:45,580 --> 00:05:46,400
+Okay, that didn't work.
+
+99
+00:05:47,180 --> 00:05:48,780
+Copy and paste the errors back into Claude,
+
+100
+00:05:48,940 --> 00:05:51,780
+see what's going on, try again, and you'll iterate like that.
+
+101
+00:05:51,780 --> 00:05:54,120
+But still iterate faster than I would have
+
+102
+00:05:54,720 --> 00:05:56,060
+writing a connector on my own,
+
+103
+00:05:56,220 --> 00:05:58,460
+where a connector might have taken me a day before,
+
+104
+00:05:59,800 --> 00:06:02,360
+you know, if it was a decent API, you know,
+
+105
+00:06:02,520 --> 00:06:02,980
+which always was.
+
+106
+00:06:03,480 --> 00:06:07,240
+Anyway, the, I was limited, right? It was Claude.
+
+107
+00:06:07,440 --> 00:06:09,000
+And I didn't feel limited,
+
+108
+00:06:09,100 --> 00:06:10,780
+because I was already working three times faster
+
+109
+00:06:10,780 --> 00:06:11,600
+than I normally would,
+
+110
+00:06:11,700 --> 00:06:13,560
+and I was, you know, pumping out new connectors.
+
+111
+00:06:14,440 --> 00:06:20,180
+But then when I came to start doing, like,
+
+112
+00:06:21,520 --> 00:06:23,680
+one of my goals was to just do everything,
+
+113
+00:06:23,920 --> 00:06:25,440
+do the whole data stack in Databricks.
+
+114
+00:06:25,760 --> 00:06:27,360
+I don't, I don't like Fivetran.
+
+115
+00:06:28,420 --> 00:06:29,340
+I think it's expensive,
+
+116
+00:06:29,760 --> 00:06:33,360
+and I've had experiences with connectors that don't work,
+
+117
+00:06:33,460 --> 00:06:36,160
+and they, you know, will assist them, they're working,
+
+118
+00:06:36,220 --> 00:06:37,760
+and then you'll dig in, and they'll like,
+
+119
+00:06:38,140 --> 00:06:40,580
+okay, yeah, we had some data loss there,
+
+120
+00:06:40,680 --> 00:06:41,640
+but it wasn't our relationship.
+
+121
+00:06:42,080 --> 00:06:44,110
+But anyway, don't love Fivetran.
+
+122
+00:06:44,290 --> 00:06:46,030
+Wanted to have everything in the same data stack,
+
+123
+00:06:46,090 --> 00:06:47,370
+because I have the technical background
+
+124
+00:06:47,370 --> 00:06:48,210
+to be able to do it.
+
+125
+00:06:48,210 --> 00:06:52,150
+And I know that the Databricks dashboarding
+
+126
+00:06:52,150 --> 00:06:53,590
+is still young,
+
+127
+00:06:54,410 --> 00:06:56,270
+and there's some things you can't do there,
+
+128
+00:06:56,350 --> 00:06:57,530
+like drop-downs, for example.
+
+129
+00:06:57,690 --> 00:06:59,870
+That's one of my biggest misses right now.
+
+130
+00:07:00,510 --> 00:07:07,040
+But anyway, I wanted to do it all in Databricks.
+
+131
+00:07:07,570 --> 00:07:09,830
+I didn't want to manage a whole suite of tools,
+
+132
+00:07:09,930 --> 00:07:11,690
+and I wanted to keep all the costs in one tool.
+
+133
+00:07:12,630 --> 00:07:16,710
+So anyway, when it came time to start doing those dashboards,
+
+134
+00:07:17,010 --> 00:07:18,170
+Claude could not get it.
+
+135
+00:07:18,910 --> 00:07:21,690
+Thankfully, Databricks has its own AI tool, Genie —
+
+136
+00:07:22,130 --> 00:07:25,030
+they were calling it at the time.
+
+137
+00:07:25,750 --> 00:07:27,470
+That was like a specific part of Genie
+
+138
+00:07:27,470 --> 00:07:29,610
+that could do the dashboard development with you
+
+139
+00:07:29,610 --> 00:07:30,530
+and other kinds of development.
+
+140
+00:07:31,030 --> 00:07:32,350
+And that was good,
+
+141
+00:07:32,930 --> 00:07:35,270
+and definitely made it so that I could stay afloat,
+
+142
+00:07:35,490 --> 00:07:37,150
+just being a single, you know,
+
+143
+00:07:37,210 --> 00:07:38,890
+data engineer trying to do all of it.
+
+144
+00:07:39,390 --> 00:07:41,290
+But when Grok Bot came out,
+
+145
+00:07:41,850 --> 00:07:44,370
+one of the things that helped me adopt it
+
+146
+00:07:44,370 --> 00:07:46,110
+was that, you know, I gave it a shot.
+
+147
+00:07:46,210 --> 00:07:48,090
+I was like, hey, can you do this dashboard for me?
+
+148
+00:07:48,230 --> 00:07:49,410
+Like, what credentials do you need
+
+149
+00:07:49,410 --> 00:07:51,290
+to be able to do dashboarding for me?
+
+150
+00:07:52,020 --> 00:07:53,740
+And I got it what it needed,
+
+151
+00:07:54,480 --> 00:07:55,480
+and it just didn't, like,
+
+152
+00:07:55,620 --> 00:07:58,900
+it came out way better than Genie and way faster.
+
+153
+00:07:59,920 --> 00:08:01,740
+And then I was like, all right, well, you know,
+
+154
+00:08:01,940 --> 00:08:03,440
+maybe I'll make a connector bot here, too,
+
+155
+00:08:03,640 --> 00:08:05,420
+and can you do, you know, some connectors?
+
+156
+00:08:05,640 --> 00:08:08,480
+And they were also way faster than Claude and way cheaper.
+
+157
+00:08:09,320 --> 00:08:13,840
+We were maxing out our Claude limits for the month,
+
+158
+00:08:13,840 --> 00:08:15,600
+as soon as we put on the enterprise.
+
+159
+00:08:16,100 --> 00:08:18,840
+And, but Grok Bot, like, yeah,
+
+160
+00:08:19,000 --> 00:08:20,580
+I could do it way cheaper and get,
+
+161
+00:08:21,020 --> 00:08:23,680
+I could spin up not just one, but two connector bots.
+
+162
+00:08:23,860 --> 00:08:27,000
+So very quickly, after just seeing
+
+163
+00:08:27,000 --> 00:08:28,640
+that it could accomplish some of these things
+
+164
+00:08:29,140 --> 00:08:30,680
+I started to give it more and more,
+
+165
+00:08:31,140 --> 00:08:33,220
+and I had a project management bot
+
+166
+00:08:33,220 --> 00:08:35,760
+that would look for tasks in Asana.
+
+167
+00:08:35,880 --> 00:08:37,380
+Asana is the ticket management system
+
+168
+00:08:37,380 --> 00:08:39,600
+that they're easier at the company
+
+169
+00:08:39,600 --> 00:08:40,560
+I work for currently.
+
+170
+00:08:41,060 --> 00:08:45,320
+And the PM bot will be onboarding the script
+
+171
+00:08:45,320 --> 00:08:47,890
+because in Asana that are assigned to me,
+
+172
+00:08:47,930 --> 00:08:50,090
+you know, update statuses where needed,
+
+173
+00:08:50,230 --> 00:08:53,910
+and then give me, like, a handoff of, like,
+
+174
+00:08:54,010 --> 00:08:55,210
+hey, here, here's all the things that I think
+
+175
+00:08:55,210 --> 00:08:57,170
+we could hand off to some of your bots on the team,
+
+176
+00:08:57,330 --> 00:08:59,250
+and then I just say go, and we do it.
+
+177
+00:08:59,970 --> 00:09:02,950
+And so very quickly, I ended up with that PM bot.
+
+178
+00:09:02,950 --> 00:09:05,630
+I was kind of orchestrating the task management stuff,
+
+179
+00:09:06,530 --> 00:09:08,070
+which I definitely don't like,
+
+180
+00:09:08,450 --> 00:09:09,990
+and you may see this as a theme.
+
+181
+00:09:10,430 --> 00:09:12,430
+Like, there are some things that the Grok Bots do now
+
+182
+00:09:12,430 --> 00:09:13,610
+that I used to really enjoy
+
+183
+00:09:13,610 --> 00:09:15,850
+that I don't really care to do anymore
+
+184
+00:09:15,850 --> 00:09:17,310
+because it just feels like a waste of time
+
+185
+00:09:17,310 --> 00:09:19,010
+when I know a bot can do it that much faster.
+
+186
+00:09:19,590 --> 00:09:21,250
+But then there are definitely things where it's like,
+
+187
+00:09:21,370 --> 00:09:22,970
+I have always hated doing that.
+
+188
+00:09:23,350 --> 00:09:24,170
+I'm giving that to a bot.
+
+189
+00:09:24,890 --> 00:09:26,790
+And the PM, like, task management stuff
+
+190
+00:09:26,790 --> 00:09:27,670
+is definitely that.
+
+191
+00:09:27,990 --> 00:09:30,030
+in a ticketing system.
+
+192
+00:09:30,530 --> 00:09:31,990
+But, yeah, so PM bot was managing that,
+
+193
+00:09:32,150 --> 00:09:36,630
+and then I had an architect bot,
+
+194
+00:09:37,190 --> 00:09:39,290
+and the reason I had the architect bot was that,
+
+195
+00:09:39,410 --> 00:09:40,710
+you know, I had a modeling bot,
+
+196
+00:09:40,870 --> 00:09:43,590
+and I had a connector bot to handle the two different aspects
+
+197
+00:09:43,590 --> 00:09:45,730
+of data engineering that I was familiar with.
+
+198
+00:09:46,390 --> 00:09:48,490
+And then I keep up the BI bot,
+
+199
+00:09:48,990 --> 00:09:51,170
+and that was doing the dashboarding for me
+
+200
+00:09:51,170 --> 00:09:52,650
+and doing, like, you know, one-off research.
+
+201
+00:09:53,150 --> 00:09:56,210
+And with the speed that I could do those things,
+
+202
+00:09:56,510 --> 00:10:00,770
+I was taking in tasks way faster than I normally would have.
+
+203
+00:10:01,230 --> 00:10:06,610
+So, you know, normally I'd have a meeting with somebody,
+
+204
+00:10:06,710 --> 00:10:07,970
+and they'd say, hey, this is what I want to do.
+
+205
+00:10:07,990 --> 00:10:09,930
+And I'd say, okay, like, based on my current workload
+
+206
+00:10:09,930 --> 00:10:12,030
+and where this fits on kind of the priority with the team,
+
+207
+00:10:12,210 --> 00:10:14,410
+like, this is something that I think I can do for you
+
+208
+00:10:14,410 --> 00:10:16,110
+this week, or maybe, you know,
+
+209
+00:10:16,170 --> 00:10:17,910
+this is something that I might have to get back to you
+
+210
+00:10:17,910 --> 00:10:19,930
+next week and get you the data.
+
+211
+00:10:20,430 --> 00:10:23,170
+But with Grok Bot, I was just like, oh, yeah, you want that?
+
+212
+00:10:24,010 --> 00:10:25,650
+And I was, like, typing it up into, you know,
+
+213
+00:10:25,890 --> 00:10:29,070
+a little message to one of my Grok Bots live in the meeting.
+
+214
+00:10:30,470 --> 00:10:31,610
+And then by the end of the meeting,
+
+215
+00:10:31,610 --> 00:10:34,150
+I had something for them, and it was just amazing.
+
+216
+00:10:34,470 --> 00:10:38,390
+And so I was taking on work at an unsustainable pace
+
+217
+00:10:38,390 --> 00:10:42,670
+for one data engineer, or even one data engineer with,
+
+218
+00:10:43,070 --> 00:10:47,270
+you know, who has one connector, you know,
+
+219
+00:10:47,270 --> 00:10:49,810
+Python scriptwriter working for him,
+
+220
+00:10:49,850 --> 00:10:51,630
+and one modeler, and one BI person.
+
+221
+00:10:52,730 --> 00:10:54,750
+And so I was just taking on that work basically
+
+222
+00:10:54,750 --> 00:10:56,370
+as fast as people could think it up.
+
+223
+00:10:57,490 --> 00:11:00,950
+And, you know, the people at the company are hungry
+
+224
+00:11:00,950 --> 00:11:02,110
+for this data.
+
+225
+00:11:02,590 --> 00:11:05,750
+They've been waiting for this kind of reporting for a while.
+
+226
+00:11:06,250 --> 00:11:08,230
+And so I was taking it on, and so, very quickly,
+
+227
+00:11:08,330 --> 00:11:09,950
+I was like, you know what, like, connector bot,
+
+228
+00:11:10,170 --> 00:11:11,550
+can we just have two connector bots?
+
+229
+00:11:12,050 --> 00:11:13,990
+And then BI bot, like, we need,
+
+230
+00:11:14,350 --> 00:11:15,810
+we actually need, like, four of you.
+
+231
+00:11:16,070 --> 00:11:19,490
+So after a week, I had, like, four BI bots,
+
+232
+00:11:19,650 --> 00:11:20,630
+and they were all running in parallel,
+
+233
+00:11:20,890 --> 00:11:22,330
+and they were all working on different projects.
+
+234
+00:11:22,910 --> 00:11:24,470
+And the PM bot was kind of helping with that,
+
+235
+00:11:24,490 --> 00:11:26,390
+but for the technical sprawl,
+
+236
+00:11:27,290 --> 00:11:29,950
+you really need a separate role in software development
+
+237
+00:11:30,830 --> 00:11:31,830
+for an architect.
+
+238
+00:11:32,650 --> 00:11:34,210
+And so I did that with a bot.
+
+239
+00:11:34,510 --> 00:11:36,630
+And so that's where the architect bot came from.
+
+240
+00:11:36,630 --> 00:11:40,150
+And he wasn't necessarily managing tasks
+
+241
+00:11:40,150 --> 00:11:44,980
+with the connector bot and the modeling bot,
+
+242
+00:11:45,940 --> 00:11:48,340
+or, well, the model, or the connector bots
+
+243
+00:11:49,160 --> 00:11:51,760
+and the BI bots, but he was making sure that
+
+244
+00:11:51,760 --> 00:11:54,160
+with all the work going on,
+
+245
+00:11:55,320 --> 00:11:57,540
+he was making sure that the code stayed consistent,
+
+246
+00:11:57,840 --> 00:11:59,140
+you know, that it matched kind of the patterns
+
+247
+00:11:59,140 --> 00:12:02,740
+that we had landed on for the code base in it.
+
+248
+00:12:02,840 --> 00:12:04,700
+It took a minute to train up the architect bot,
+
+249
+00:12:04,700 --> 00:12:08,240
+but I will say, as far as learnings for Grok Bot,
+
+250
+00:12:08,780 --> 00:12:11,100
+having an architect bot and a PM bot,
+
+251
+00:12:11,360 --> 00:12:12,740
+and this is going to come as no surprise
+
+252
+00:12:12,740 --> 00:12:14,840
+to anybody who has done software engineering
+
+253
+00:12:15,740 --> 00:12:19,420
+in any, you know, to any degree up to this point.
+
+254
+00:12:19,900 --> 00:12:22,640
+Having a distinct architect bot and a PM bot
+
+255
+00:12:22,640 --> 00:12:24,500
+has been a game changer,
+
+256
+00:12:24,600 --> 00:12:26,060
+and spending the time to get those right
+
+257
+00:12:26,060 --> 00:12:27,900
+has been a game changer for actually, like,
+
+258
+00:12:28,180 --> 00:12:29,860
+getting work done and doing it in a way
+
+259
+00:12:29,860 --> 00:12:30,480
+where I'm not, like,
+
+260
+00:12:30,560 --> 00:12:32,800
+having to constantly go back and manage tech debt
+
+261
+00:12:33,860 --> 00:12:35,960
+and handle things that are, you know,
+
+262
+00:12:36,280 --> 00:12:38,420
+we're making updates and that's breaking other things, you know?
+
+263
+00:12:39,640 --> 00:12:42,840
+So that's one of the main learnings for me so far.
+
+264
+00:12:44,100 --> 00:12:46,620
+Now, where do things go from here?
+
+265
+00:12:47,120 --> 00:12:50,790
+Personally, you know, I try to avoid being, like,
+
+266
+00:12:50,910 --> 00:12:53,790
+a fanboy of, like, one specific tool,
+
+267
+00:12:54,950 --> 00:12:56,170
+and, you know, obviously,
+
+268
+00:12:56,210 --> 00:12:57,890
+reserve the right to change in the future, of course,
+
+269
+00:12:58,250 --> 00:13:01,230
+because people are always pushing out new exciting things,
+
+270
+00:13:01,470 --> 00:13:02,270
+especially right now,
+
+271
+00:13:02,970 --> 00:13:05,550
+but the two that I will bet on every time right now
+
+272
+00:13:05,550 --> 00:13:08,530
+are Databricks, because, you know,
+
+273
+00:13:08,590 --> 00:13:09,830
+with all the AI, you might think
+
+274
+00:13:10,710 --> 00:13:15,130
+you don't need a data warehouse anymore,
+
+275
+00:13:15,250 --> 00:13:16,270
+you don't need a BI tool, like,
+
+276
+00:13:16,330 --> 00:13:19,130
+because the bots can just do it, right?
+
+277
+00:13:19,230 --> 00:13:20,470
+They can just tell you what you want to know,
+
+278
+00:13:20,650 --> 00:13:21,430
+but the problem is,
+
+279
+00:13:22,530 --> 00:13:24,450
+you have to connect those bots every time
+
+280
+00:13:24,450 --> 00:13:27,420
+to figure out, you know, those answers,
+
+281
+00:13:27,960 --> 00:13:29,480
+but then the other thing is
+
+282
+00:13:29,980 --> 00:13:32,480
+when there are specific definitions at play,
+
+283
+00:13:32,540 --> 00:13:34,320
+I'm like, this is how we calculate net revenue.
+
+284
+00:13:34,680 --> 00:13:37,920
+We, you know, subtract the landed cost of the good,
+
+285
+00:13:39,260 --> 00:13:45,170
+and then we subtract any refunds and returns in the period
+
+286
+00:13:45,170 --> 00:13:46,610
+versus, you know, when we look at it
+
+287
+00:13:46,610 --> 00:13:47,750
+for the lifetime of the product,
+
+288
+00:13:47,990 --> 00:13:51,670
+we do the returns netted out against the original sale,
+
+289
+00:13:51,910 --> 00:13:53,610
+and so you have, you know,
+
+290
+00:13:53,610 --> 00:13:55,430
+numbers that are kind of changing back in time
+
+291
+00:13:55,430 --> 00:13:56,890
+on returns that are happening now,
+
+292
+00:13:57,890 --> 00:13:59,250
+and so there's, you know, things like that
+
+293
+00:13:59,250 --> 00:14:00,980
+that are like definitions,
+
+294
+00:14:01,500 --> 00:14:03,520
+things that you have coded into a data warehouse
+
+295
+00:14:03,520 --> 00:14:06,260
+that you don't want to have to coach your AIs
+
+296
+00:14:06,260 --> 00:14:08,360
+through every time you do an inquiry,
+
+297
+00:14:08,860 --> 00:14:11,620
+which kind of gets into this concept of like a company brain,
+
+298
+00:14:11,720 --> 00:14:12,840
+which is something that I know is,
+
+299
+00:14:12,840 --> 00:14:15,880
+is a topic for people right now,
+
+300
+00:14:16,380 --> 00:14:18,860
+but, so data warehouse is kind of like
+
+301
+00:14:18,860 --> 00:14:21,880
+step one of the company brain, you know,
+
+302
+00:14:22,200 --> 00:14:24,180
+something where when you ask this question,
+
+303
+00:14:24,560 --> 00:14:26,280
+you want to ask it and know that it's going to give you
+
+304
+00:14:26,280 --> 00:14:27,620
+the same answer that it's giving your neighbor,
+
+305
+00:14:28,240 --> 00:14:29,980
+and when you don't have a data warehouse,
+
+306
+00:14:30,480 --> 00:14:31,720
+you can't be as sure of that,
+
+307
+00:14:32,240 --> 00:14:34,020
+and so data warehouse is still important,
+
+308
+00:14:34,100 --> 00:14:35,700
+and if you're going to have a data warehouse,
+
+309
+00:14:36,040 --> 00:14:37,640
+I highly, highly recommend Databricks.
+
+310
+00:14:38,380 --> 00:14:41,440
+It's just really scalable, really flexible.
+
+311
+00:14:42,180 --> 00:14:43,700
+They're always coming out with new features,
+
+312
+00:14:43,700 --> 00:14:45,360
+which is probably the biggest thing for me
+
+313
+00:14:45,360 --> 00:14:47,660
+between Databricks and Grok Bot
+
+314
+00:14:47,660 --> 00:14:49,600
+is just that they're always coming out with new features,
+
+315
+00:14:49,700 --> 00:14:50,960
+they're always making it more useful,
+
+316
+00:14:51,160 --> 00:14:53,300
+and the features that they're landing make sense.
+
+317
+00:14:54,040 --> 00:14:55,720
+It's not just silly, stupid stuff
+
+318
+00:14:55,720 --> 00:14:59,460
+like you see with some of the SaaS stuff going on there,
+
+319
+00:14:59,600 --> 00:15:02,700
+and even, I mean, Databricks itself and Grok Bot,
+
+320
+00:15:02,960 --> 00:15:05,400
+like all the AI tools, like they're usage-based,
+
+321
+00:15:06,100 --> 00:15:07,740
+which is another feature that I like,
+
+322
+00:15:07,840 --> 00:15:09,400
+like it's not a subscription.
+
+323
+00:15:09,740 --> 00:15:11,660
+Just to have it, you know,
+
+324
+00:15:12,140 --> 00:15:13,980
+you're getting charged based on how much you're using,
+
+325
+00:15:13,980 --> 00:15:16,020
+and so it's really up to you
+
+326
+00:15:16,730 --> 00:15:18,190
+what's worth it and what's not,
+
+327
+00:15:18,690 --> 00:15:20,970
+as far as the projects that you're going to take on
+
+328
+00:15:20,970 --> 00:15:22,170
+and the compute that you're going to use.
+
+329
+00:15:22,670 --> 00:15:24,150
+So, really love Databricks.
+
+330
+00:15:24,430 --> 00:15:25,790
+The other one, of course, is Grok Bot.
+
+331
+00:15:26,110 --> 00:15:28,690
+I will bet on Grok Bot pretty much every time right now.
+
+332
+00:15:29,470 --> 00:15:34,740
+You know, people still like Claude and other tools,
+
+333
+00:15:35,240 --> 00:15:36,940
+and yeah, I think they're useful,
+
+334
+00:15:37,180 --> 00:15:38,200
+but honestly, for me,
+
+335
+00:15:38,200 --> 00:15:44,260
+my plan is to, assuming it works with the user agreement,
+
+336
+00:15:44,480 --> 00:15:49,260
+is to download Claude Cowork on my Grok Bot's VM
+
+337
+00:15:50,220 --> 00:15:51,780
+so that they can just, you know,
+
+338
+00:15:52,320 --> 00:15:53,920
+there's a best practice right now of like,
+
+339
+00:15:54,060 --> 00:15:56,920
+hey, like, you know, the models will self-assure,
+
+340
+00:15:57,260 --> 00:15:59,460
+and so you want to compare their output
+
+341
+00:15:59,460 --> 00:16:00,820
+against another model's output.
+
+342
+00:16:01,780 --> 00:16:04,840
+I just want to give Claude to Grok Bot and say,
+
+343
+00:16:05,020 --> 00:16:06,800
+hey, anytime you're going to submit a PR,
+
+344
+00:16:07,440 --> 00:16:09,640
+check it against Claude first and get feedback,
+
+345
+00:16:09,840 --> 00:16:12,200
+and then iterate that way before you submit the PR,
+
+346
+00:16:12,600 --> 00:16:15,380
+and then, you know, there's less back and forth
+
+347
+00:16:15,380 --> 00:16:17,300
+with that bot and the architect bot.
+
+348
+00:16:17,800 --> 00:16:20,000
+You know, it's got a second opinion already
+
+349
+00:16:20,000 --> 00:16:22,540
+before it's even submitted the PR to go from dev to stage.
+
+350
+00:16:23,040 --> 00:16:24,640
+So that's one place to go from here,
+
+351
+00:16:24,720 --> 00:16:26,500
+but then the other place for me, honestly,
+
+352
+00:16:26,680 --> 00:16:31,940
+is just I'm looking for how I can set up my architect bot
+
+353
+00:16:31,940 --> 00:16:33,600
+to be able to deploy,
+
+354
+00:16:33,600 --> 00:16:35,240
+and I think I know what I need to do there.
+
+355
+00:16:35,440 --> 00:16:36,900
+It feels a little bit scary,
+
+356
+00:16:37,560 --> 00:16:40,980
+but I've gotten to the point on what I've heard
+
+357
+00:16:40,980 --> 00:16:42,160
+called the trust ladder,
+
+358
+00:16:43,320 --> 00:16:45,150
+where I trust the bots,
+
+359
+00:16:45,290 --> 00:16:46,510
+I trust the work that they're doing,
+
+360
+00:16:46,830 --> 00:16:49,510
+and at this point, the annoyance for me
+
+361
+00:16:49,510 --> 00:16:51,510
+is having to tell them yes or no,
+
+362
+00:16:51,510 --> 00:16:52,970
+like, well, it's not even yes or no,
+
+363
+00:16:53,050 --> 00:16:55,050
+it's just having to tell them yes all the time and go.
+
+364
+00:16:55,810 --> 00:16:58,210
+I'd like to just give them the ability to just do it.
+
+365
+00:16:59,060 --> 00:17:02,670
+For example, when I have outages,
+
+366
+00:17:03,770 --> 00:17:05,430
+credentials expired unexpectedly,
+
+367
+00:17:06,210 --> 00:17:11,240
+or an API got an update that wasn't well advertised,
+
+368
+00:17:11,740 --> 00:17:14,540
+which I hope to be able to manage better in the future too,
+
+369
+00:17:14,920 --> 00:17:20,890
+and have connector bots do some proactive work there.
+
+370
+00:17:21,290 --> 00:17:24,840
+But when I have those kind of outages
+
+371
+00:17:24,840 --> 00:17:28,280
+and I have my morning Slack update that comes up,
+
+372
+00:17:28,280 --> 00:17:30,880
+and that's automated, that's not a bot running that,
+
+373
+00:17:30,980 --> 00:17:33,680
+that's like a cron job that just runs and checks
+
+374
+00:17:33,680 --> 00:17:34,820
+the status of all my pipelines,
+
+375
+00:17:35,500 --> 00:17:37,140
+you don't need to have a bot do everything.
+
+376
+00:17:37,340 --> 00:17:38,520
+There's some things that can be automated
+
+377
+00:17:38,520 --> 00:17:40,450
+that don't need to be a bot.
+
+378
+00:17:40,830 --> 00:17:44,010
+But whenever that status comes out,
+
+379
+00:17:44,290 --> 00:17:47,330
+I'd like for the architect bot to just hop on
+
+380
+00:17:47,330 --> 00:17:49,250
+before I even get on in the morning and say,
+
+381
+00:17:49,330 --> 00:17:50,390
+oh, looks like this is out,
+
+382
+00:17:51,110 --> 00:17:52,690
+we need to draft a message to so-and-so
+
+383
+00:17:52,690 --> 00:17:53,890
+to ask for refresh credentials,
+
+384
+00:17:54,330 --> 00:17:55,470
+or oh, looks like this is out,
+
+385
+00:17:55,570 --> 00:17:58,210
+let's look up the API documentation.
+
+386
+00:17:58,210 --> 00:17:59,190
+Yep, there was an update.
+
+387
+00:17:59,370 --> 00:18:00,510
+Let's go ahead and write that update,
+
+388
+00:18:01,150 --> 00:18:03,350
+do the whole PR review process and push it
+
+389
+00:18:03,350 --> 00:18:07,470
+and rerun that connector before I even log in in the morning.
+
+390
+00:18:07,630 --> 00:18:10,770
+And then I can just check Slack and see it's all done.
+
+391
+00:18:11,270 --> 00:18:13,410
+So that's where I'm looking to go.
+
+392
+00:18:14,090 --> 00:18:15,410
+And one of the main reasons is I'm looking
+
+393
+00:18:15,410 --> 00:18:17,330
+to hand off my entire job to this team.
+
+394
+00:18:18,730 --> 00:18:21,970
+Again, I'm at the point where I've loved
+
+395
+00:18:21,970 --> 00:18:24,130
+what I've done in my career
+
+396
+00:18:24,130 --> 00:18:27,090
+and the joy of solving problems,
+
+397
+00:18:28,210 --> 00:18:29,870
+but I'm scaling that.
+
+398
+00:18:30,130 --> 00:18:33,830
+I'm moving up a layer and abstracting that into,
+
+399
+00:18:34,010 --> 00:18:35,370
+yeah, I don't need to be the one
+
+400
+00:18:36,360 --> 00:18:38,140
+manually solving these problems anymore.
+
+401
+00:18:38,380 --> 00:18:40,260
+There is a faster, more efficient way.
+
+402
+00:18:40,940 --> 00:18:42,900
+And I have the experience where I can say,
+
+403
+00:18:43,100 --> 00:18:44,740
+nope, this is the right way to do it.
+
+404
+00:18:44,820 --> 00:18:46,360
+These are the standards that we're gonna adopt
+
+405
+00:18:46,360 --> 00:18:49,960
+because these save us from shooting ourself
+
+406
+00:18:49,960 --> 00:18:52,360
+in the foot on other things
+
+407
+00:18:53,420 --> 00:18:55,420
+so that we can really be as scalable
+
+408
+00:18:55,420 --> 00:18:57,320
+as the tool is, as Databricks is,
+
+409
+00:18:58,290 --> 00:19:00,650
+and not create a whole bunch of cruft ourselves.
+
+410
+00:19:01,150 --> 00:19:03,990
+And so, yeah, I'm at the point
+
+411
+00:19:03,990 --> 00:19:05,810
+where I don't need to be writing that code anymore.
+
+412
+00:19:05,990 --> 00:19:07,970
+I don't need to be making those dashboards.
+
+413
+00:19:09,090 --> 00:19:11,630
+And I definitely, definitely don't need to be writing updates
+
+414
+00:19:11,630 --> 00:19:15,810
+on my job tickets in Asana or Jira or whatever.
+
+415
+00:19:16,310 --> 00:19:18,050
+And with handing that off,
+
+416
+00:19:18,300 --> 00:19:21,080
+my plan and the plan that I've been talking about
+
+417
+00:19:21,080 --> 00:19:23,460
+with my managers is, yeah, not just to manage,
+
+418
+00:19:23,620 --> 00:19:26,260
+but to continue to expand into like,
+
+419
+00:19:26,260 --> 00:19:28,800
+hey, how do we solve more of these problems with AI?
+
+420
+00:19:29,000 --> 00:19:32,680
+How do we implement these little bots
+
+421
+00:19:32,680 --> 00:19:35,320
+or these teams that can automate processes for us
+
+422
+00:19:35,320 --> 00:19:40,370
+that are honestly requiring people currently
+
+423
+00:19:40,370 --> 00:19:43,210
+to do the most tedious tasks you can imagine
+
+424
+00:19:43,210 --> 00:19:45,990
+of just copying and pasting stuff from emails
+
+425
+00:19:45,990 --> 00:19:47,750
+to spreadsheets or spreadsheets to emails
+
+426
+00:19:47,750 --> 00:19:49,530
+all day long?
+
+427
+00:19:49,750 --> 00:19:51,170
+Like, how can we automate some of that stuff
+
+428
+00:19:51,170 --> 00:19:52,550
+and let the people do the people work
+
+429
+00:19:52,550 --> 00:19:55,410
+and scale the business without necessarily scaling
+
+430
+00:19:56,590 --> 00:19:57,550
+the overhead?
+
+431
+00:19:58,390 --> 00:20:00,710
+So, anyway, that's just my thoughts
+
+432
+00:20:00,710 --> 00:20:02,150
+on Grok Bot right now.
+
+433
+00:20:02,730 --> 00:20:03,890
+I've really enjoyed it.
+
+434
+00:20:03,910 --> 00:20:05,730
+I really recommend checking it out.
+
+435
+00:20:06,630 --> 00:20:11,110
+And, yeah, I hope to have another update like this soon
+
+436
+00:20:11,110 --> 00:20:12,430
+when I've made those changes
+
+437
+00:20:12,430 --> 00:20:14,150
+and have something more useful.
+
+438
+00:20:14,390 --> 00:20:15,370
+But if you've got questions
+
+439
+00:20:15,370 --> 00:20:17,810
+or want to see my implementation
+
+440
+00:20:17,810 --> 00:20:22,470
+or want to pick my brain on how that implementation
+
+441
+00:20:22,470 --> 00:20:25,710
+might work in your setting or in your environment
+
+442
+00:20:25,710 --> 00:20:27,050
+or how to set up that environment
+
+443
+00:20:27,050 --> 00:20:28,530
+to really be able to trust your bots,
+
+444
+00:20:29,310 --> 00:20:30,930
+I'd love to talk more about those things.
+
+445
+00:20:31,270 --> 00:20:32,850
+So I'll talk to you later.
+
+446
+00:20:33,570 --> 00:20:35,190
+Plenty of morning drives, so I'll see you then.
